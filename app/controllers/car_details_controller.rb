@@ -1,4 +1,5 @@
 class CarDetailsController < ApplicationController
+  skip_before_action :verify_authenticity_token
   before_action :set_car_detail, only: %i[ show edit update destroy ]
 
   # GET /car_details or /car_details.json

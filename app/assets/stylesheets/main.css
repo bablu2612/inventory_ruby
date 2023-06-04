@@ -344,7 +344,7 @@ section {
 }
 
 .page-heading {
-    background-image: url(../images/page_heading_bg.jpg);
+    background-image: url(/assets/page_heading_bg.jpg);
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -771,7 +771,6 @@ section {
 
 @media (max-width:767px) {
     .site-header {
-        background-color: #2959ad;
         -webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
         box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15)
     }
@@ -812,7 +811,7 @@ only screen and (min-resolution:192dpi) and (max-width:1024px) {
         float: left;
         padding: 15px 0px 44px 0px;
         display: inline-block;
-        background-image: url(../images/logo_responsive_black.png)
+        background-image: url(/assets/logo_responsive_black.png)
     }
 
     .site-header #cssmenu.align-center>ul {
