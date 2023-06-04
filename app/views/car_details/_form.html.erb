@@ -1,0 +1,224 @@
+<script src="https://cdn.tailwindcss.com"></script>
+<div class="appraisal_form">
+<%= form_with(model: car_detail, multipart: true) do |form| %>
+<div class="main_div max-w-[800px] mx-auto my-5 shadow-xl p-5">
+   <div class="logo_main">
+      <img src="<%= asset_path("logo_black.png")%>" class="w-[120px] m-auto">
+   </div>
+   <div class="main_header font-extrabold w-fit ml-auto mr-auto  mt-[50px] text-[#3c3838]">
+      <h2 class="border-none pl-0 font-bold text-3xl">Vehicle Appraisal Form</h2>
+   </div>
+   <div class="form_main_div w-full max-w-full mt-[40px]">
+      <h6 class="font-black">Please fill out the following information:</h6>
+      <form class="vehicle_appraisel_form mt-[10px]">
+         <div class="flex gap-[15px]">
+            <div class="form_group mt-[11px] max-w-full w-full">
+               <label class="text-slate-600 font-bold">
+               Year<span class="text-red-500">*</span>
+               </label>
+               <%= form.text_field :year,placeholder: "Enter Year", class: "block rounded-md outline-none px-3 py-2 mt-2 w-full" %>
+               <% if car_detail.errors.has_key?(:year) %>
+               <div class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">Year is required</div>
+               <% end %>
+            </div>
+            <div class="form_group mt-[11px] max-w-full w-full">
+               <label class="text-slate-600 font-bold">
+               Make<span class="text-red-500">*</span>
+               </label>
+               <%= form.text_field :make,placeholder: "Enter Make", class: "block rounded-md outline-none px-3 py-2 mt-2 w-full" %>
+               <% if car_detail.errors.has_key?(:year) %>
+               <div class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">Year is required</div>
+               <% end %>
+            </div>
+         </div>
+         <div class="flex gap-[15px]">
+            <div class="form_group mt-[11px] max-w-full w-full">
+               <label class="text-slate-600 font-bold">
+               Model<span class="text-red-500">*</span>
+               </label>
+               <%= form.text_field :model,placeholder: "Enter Model", class: "block rounded-md border-0 outline-none px-3 py-2 mt-2 w-full" %>
+               <% if car_detail.errors.has_key?(:model) %>
+               <div class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">Model is required</div>
+               <% end %>
+            </div>
+            <div class="form_group mt-[11px] max-w-full w-full">
+               <label class="text-slate-600 font-bold">
+               Trim<span class="text-red-500">*</span>
+               </label>
+               <%= form.text_field :trim,placeholder: "Enter Trim", class: "block rounded-md border-0 outline-none px-3 py-2 mt-2 w-full" %>
+               <% if car_detail.errors.has_key?(:trim) %>
+               <div class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">Trim is required</div>
+               <% end %>
+            </div>
+         </div>
+         <div class="flex gap-[15px]">
+            <div class="form_group mt-[11px] max-w-full w-full">
+               <label class="text-slate-600 font-bold">
+               Mileage<span class="text-red-500">*</span>
+               </label>
+               <%= form.number_field :mileage, placeholder: "Enter Mileage", class: "block rounded-md border-0 outline-none px-3 py-2 mt-2 w-full" %>
+               <% if car_detail.errors.has_key?(:mileage) %>
+               <div class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">Mileage is required</div>
+               <% end %>
+            </div>
+            <div class="form_group mt-[11px] max-w-full w-full">
+               <label class="text-slate-600 font-bold">
+               Zip Code<span class="text-red-500">*</span>
+               </label>
+               <%= form.number_field :zip_code, placeholder: "Enter Zip Code", class: "block rounded-md border-0 outline-none px-3 py-2 mt-2 w-full" %>
+               <% if car_detail.errors.has_key?(:zip_code) %>
+               <div class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">Zipcode is required</div>
+               <% end %>
+            </div>
+         </div>
+
+        <div class="flex gap-[15px]">
+            <div class="form_group mt-[11px] max-w-full w-full">
+               <label class="text-slate-600 font-bold">
+               Fuel Type<span class="text-red-500">*</span>
+               </label>
+               <%= form.text_field :fuel_type, placeholder: "Enter Fuel Type", class: "block rounded-md border-0 outline-none px-3 py-2 mt-2 w-full" %>
+               <% if car_detail.errors.has_key?(:fuel_type) %>
+               <div class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">Fuel Type is required</div>
+               <% end %>
+            </div>
+            <div class="form_group mt-[11px] max-w-full w-full">
+               <label class="text-slate-600 font-bold">
+               Color<span class="text-red-500">*</span>
+               </label>
+               <%= form.text_field :color, placeholder: "Enter Color", class: "block rounded-md border-0 outline-none px-3 py-2 mt-2 w-full" %>
+               <% if car_detail.errors.has_key?(:color) %>
+               <div class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">Color is required</div>
+               <% end %>
+            </div>
+         </div>
+
+         <div class="flex gap-[15px] align-items-end">
+            <div class="form_group mt-[11px] max-w-full w-full">
+               <label class="text-slate-600 font-bold">
+                Vehicle Condition <span class="text-red-500">*</span>
+               </label>
+               <%= form.select :vehicle_condition, ["Clean", "Average", "Rough", "Damaged", "Not sure"], class: "block rounded-md border-0 outline-none px-3 py-2 mt-2 w-full" %>
+               <% if car_detail.errors.has_key?(:vehicle_condition) %>
+               <div class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">Vehicle Condition is required</div>
+               <% end %>
+            </div>
+            <div class="form_group mt-[11px] max-w-full w-full">
+               <label class="text-slate-600 font-bold">
+                Title Status <span class="text-red-500">*</span>
+               </label>
+               <%= form.select :title_status, ["Paid off", "Financed", "Leased"], class: "block rounded-md border-0 outline-none px-3 py-2 mt-2 w-full" %>
+               <% if car_detail.errors.has_key?(:title_status) %>
+               <div class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">Title Status is required</div>
+               <% end %>
+            </div>
+         </div>
+        <div class="flex gap-[15px] align-items-end mt-[20px]">
+          <div class="upload_files_main w-full">
+              <div class="max-w-full">
+                <label for="file_upload" id="drop_zone" class="flex justify-center w-full h-32 px-4 transition bg-white border-2 border-gray-300 border-dashed rounded-md appearance-none cursor-pointer hover:border-gray-400 focus:outline-none"> <span class="flex items-center space-x-2 flex-col justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-[26px] text-black" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                  </svg>
+                  <span class="font-medium text-gray-600 mt-2 ml-0">
+                  Drop Images to Attach, or
+                  <span class="text-blue-900 text-capitalize underline">browse</span> </span>
+                  </span>
+                  <input type="file" name="car_detail[images][]" id="file_upload" class="hidden" multiple="true" accept="image/png, image/gif, image/jpeg"> </label>
+              </div>
+          </div>
+        </div>
+        
+          <div class="form_group mt-[11px]">
+  
+                <%= form.submit "Submit", class: "group relative h-12 w-48 overflow-hidden rounded-lg bg-blue-500 text-white text-lg shadow relative text-white font-bold opacity-1 bg-[#0080ff]" %>
+              
+          </div>
+      </form>
+      </div>
+      <div class="sponsers_comapnies mt-[40px]">
+         <div class="row1 flex justify-between gap-3 align-content-center">
+            <div class="w-[33.33%] flex-auto border-[1px] border-slate-200 rounded flex align-items-center p-2 justify-center">
+               <img src="<%= asset_path("deallerTrackLogo.jpeg")%>" class="max-w-[120px] w-full">
+            </div>
+            <div class="w-[33.33%] flex-auto border-[1px] border-slate-200 rounded flex align-items-center p-2 justify-center">
+               <img src="<%= asset_path("autoNationLogo.jpeg")%>" class="max-w-[120px] w-full">
+            </div>
+            <div class="w-[33.33%] flex-auto border-[1px] border-slate-200 rounded flex align-items-center p-2 justify-center">
+               <img src="<%= asset_path("edmundsLogo.jpeg")%>" class="max-w-[120px] w-full">
+            </div>
+            <div class="w-[33.33%] flex-auto border-[1px] border-slate-200 rounded flex align-items-center p-2 justify-center">
+               <img src="<%= asset_path("autoTraderLogo.jpeg")%>" class="max-w-[120px] w-full">
+            </div>
+            <div class="w-[33.33%] flex-auto border-[1px] border-slate-200 rounded flex align-items-center p-2 justify-center">
+               <img src="<%= asset_path("ManheimLogo.jpeg")%>" class="max-w-[120px] w-full">
+            </div>
+            <div class="w-[33.33%] flex-auto border-[1px] border-slate-200 rounded flex align-items-center p-2 justify-center">
+               <img src="<%= asset_path("kbb_logo.png")%>" class="max-w-[120px] w-full ">
+            </div>
+         </div>
+      </div>
+   </div>
+   <% end %>
+</div>
+<style>
+   form :where(input, select) {
+   height: 36.5px;
+   box-shadow: none !important; */
+   } 
+</style>
+<script>
+    function carAttchmentModal() {
+        document.getElementById('car_attachement_modal').classList.toggle('hidden')
+    }
+    // Get the drop zone element
+    var dropZone = document.getElementById('drop_zone');
+    // Get the file input element
+    var fileInput = document.getElementById('file_upload');
+    // Add event listeners for drag and drop
+    dropZone.addEventListener('dragover', handleDragOver, false);
+    dropZone.addEventListener('dragleave', handleDragLeave, false);
+    dropZone.addEventListener('drop', handleDrop, false);
+    // Add event listener for manual file selection
+    fileInput.addEventListener('change', handleFileSelect, false);
+
+    function handleDragOver(event) {
+        event.preventDefault();
+        dropZone.classList.add('border-blue-600');
+    }
+
+    function handleDragLeave(event) {
+        event.preventDefault();
+        dropZone.classList.remove('border-blue-600');
+    }
+
+    function handleDrop(event) {
+        event.preventDefault();
+        dropZone.classList.remove('border-blue-600');
+        // Get the dropped files
+        var files = event.dataTransfer.files;
+        // Update the label text with the number of files dropped
+        if (files.length === 1) {
+            dropZone.querySelector('span').innerHTML = '1 file attached';
+        }
+        else {
+            dropZone.querySelector('span').innerHTML = files.length + ' files attached';
+        }
+        // Add the files to the input element
+        fileInput.files = files;
+    }
+
+    function handleFileSelect(event) {
+        // Get the selected files
+        var files = event.target.files;
+        // Update the label text with the number of files selected
+        if (files.length === 1) {
+            dropZone.querySelector('span').innerHTML = '1 file attached';
+        }
+        else {
+            dropZone.querySelector('span').innerHTML = files.length + ' files attached';
+        }
+    }
+</script>

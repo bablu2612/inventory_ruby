@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="ie ie9" lang="en-US">
+<![endif]-->
+<html lang="en-US">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="">
+	<meta name="keywords" content="HTML,CSS,XML,JavaScript">
+	<meta name="author" content="Car Dealer Template">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Acropos - Car Dealer HTML5 Template</title>
+	<script nonce="undefined" src="https://cdn.zingchart.com/zingchart.min.js"></script>
+
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="assets/css/bootstrap.css">
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<!-- Slider Pro Css -->
+	<link rel="stylesheet" href="assets/css/sliderPro.css">
+	<!-- Owl Carousel Css -->
+	<link rel="stylesheet" href="assets/css/owl-carousel.css">
+	<!-- Flat Icons Css -->
+	<link rel="stylesheet" href="assets/css/flaticon.css">
+	<!-- Animated Css -->
+	<link rel="stylesheet" href="assets/css/animated.css">
+
+
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
+	<style>
+		@media (max-width: 767px) {
+			.preloader {
+				display: none;
+			}
+		}
+
+		.chart--container {
+			min-height: 530px;
+			width: 100%;
+			height: 100%;
+		}
+
+		.zc-ref {
+			display: none;
+		}
+	</style>
+</head>
+
+<body>
+
+
+
+	<div class="preloader">
+		<div class="preloader-bounce">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
+
+	<div id="search">
+		<button type="button" class="close">×</button>
+		<form>
+			<input type="search" value="" placeholder="type keyword(s) here" />
+			<button type="submit" class="primary-button"><a href="#">Search <i class="fa fa-search"></i></a></button>
+		</form>
+	</div>
+
+	<header class="site-header wow fadeIn" data-wow-duration="1s">
+		<div id="main-header" class="main-header">
+			<div class="container clearfix">
+				<div class="logo">
+					<a href="index.html"></a>
+				</div>
+				<div id='cssmenu'>
+					<ul>
+						<li><a href='index.html'>Homepage</a></li>
+						<li class='active'><a href='#'>Car Listing</a>
+							<ul>
+								<li><a href='#'>Sidebar</a>
+									<ul>
+										<li><a href='car_listing_sidebar.html'>Car Listing</a></li>
+										<li><a href='car_grid_sidebar.html'>Car Grid</a></li>
+									</ul>
+								</li>
+								<li><a href='#'>No Sidebar</a>
+									<ul>
+										<li><a href='car_listing_no_sidebar.html'>Car Listing</a></li>
+										<li><a href='car_grid_no_sidebar.html'>Car Grid</a></li>
+									</ul>
+								</li>
+								<li><a href="single_car.html">Single Car</a></li>
+							</ul>
+						</li>
+						<li class='active'><a href='#'>Blog</a>
+							<ul>
+								<li><a href='#'>Sidebar</a>
+									<ul>
+										<li><a href='blog_listing_sidebar.html'>Blog Classic</a></li>
+										<li><a href='blog_grid_sidebar.html'>Blog Grid</a></li>
+									</ul>
+								</li>
+								<li><a href='#'>No Sidebar</a>
+									<ul>
+										<li><a href='blog_listing_no_sidebar.html'>Blog Classic</a></li>
+										<li><a href='blog_grid_no_sidebar.html'>Blog Grid</a></li>
+									</ul>
+								</li>
+								<li><a href="single_post.html">Single Post</a></li>
+							</ul>
+						</li>
+						<li><a href='about_us.html'>About Us</a></li>
+						<li><a href='contact_us.html'>Contact Us</a></li>
+						<li>
+							<a href="#search"><i class="fa fa-search"></i></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</header>
+
+
+
+
+	<div class="recent-car single-car wow fadeIn" data-wow-delay="0.5s" data-wow-duration="1s">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6">
+					<button class="customnutton primary-button" id="back_buton">Back</button>
+				</div>
+				<div class="col-sm-6">
+					<button class="customnutton customnutton_right primary-button" id="print">Print</button>
+				</div>
+			</div>
+			<div class="recent-car-content mt-3">
+				<div class="row">
+					<div class="col-md-6">
+						<div id="single-car" class="slider-pro">
+							<div class="sp-slides">
+
+								<div class="sp-slide">
+									<img class="sp-image" src="/assets/USC60TSS011C021001.jpg" alt="" />
+								</div>
+
+								<div class="sp-slide">
+									<img class="sp-image" src="/assets/USC60TSS011C021001.jpg" alt="" />
+								</div>
+
+								<div class="sp-slide">
+									<img class="sp-image" src="/assets/USC60TSS011C021001.jpg" alt="" />
+								</div>
+
+								<div class="sp-slide">
+									<img class="sp-image" src="/assets/USC60TSS011C021001.jpg" alt="" />
+								</div>
+
+								<div class="sp-slide">
+									<img class="sp-image" src="/assets/USC60TSS011C021001.jpg" alt="" />
+								</div>
+
+							</div>
+
+							<div class="sp-thumbnails">
+								<img class="sp-thumbnail" src="/assets/USC60TSS011C021001.jpg" alt="" />
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="car-details">
+							<h4>2017 BMW X5 xDrive35i</h4>
+							<span>$45.000</span>
+							<div class="container">
+								<div class="row">
+									<ul class="car-info col-md-6">
+										<li><i class=""><img src="/assets/logo_year.png" alt="" /></i>
+											<p>2018</p>
+										</li>
+										<li><i class="flaticon-shift"></i>
+											<p>Automatic</p>
+										</li>
+										<li><i class=""><img src="/assets/logo_mileage.png" alt="" /></i>
+											<p>36,000 mile</p>
+										</li>
+										<li><i class=""><img src="/assets/logo_fuel-type.png" alt="" /></i>
+											<p>Gasoline</p>
+										</li>
+									</ul>
+									<ul class="car-info col-md-6">
+										<li><i class=""><img src="/assets/logo_exterior_color.png" alt="" /></i>
+											<p>White</p>
+										</li>
+										<li><i class=""><img src="/assets/logo_vehicle_condition.png"
+													alt="" /></i>
+											<p>★★★★</p>
+										</li>
+										<li><i class=""><img src="/assets/logo_title_status.png" alt="" /></i>
+											<p>Paid-Off</p>
+										</li>
+										<li><i class=""><img src="/assets/logo_zip_code.png" alt="" /></i>
+											<p>160002</p>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="similar-info">
+								<div class="primary-button">
+									<a href="#">Make Offer <i class="fa fa-dollar"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<section class="pt-0 holder_canvas">
+		<div class="recent-car similar-car wow fadeIn" data-wow-duration="1s">
+			<div class="container">
+				<div class="recent-car-content">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="section-heading">
+
+
+								<div id='myChart' class="chart--container"><a class="zc-ref" href="#">
+										<div class="text-content">
+											<h2>Meter Charts</h2>
+										</div>
+									</a></div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3">
+					<div class="footer-item">
+						<div class="about-us">
+							<h2>About Us</h2>
+							<p>Irony actually meditation, occupy mumblecore wayfarers organic pickled 90's.
+								Intelligentsia as actually +1 meh photo booth.</p>
+							<ul>
+								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fa fa-behance"></i></a></li>
+								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+								<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-12">
+					<div class="sub-footer">
+						<p>Copyright 2019. All rights reserved by: <a href="#">Cocotemplates</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+	<script>
+		ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768ff5"];
+		let feed = (callback) => {
+			let tick = {};
+			tick.plot0 = Math.ceil(350 + Math.random() * 500);
+			callback(JSON.stringify(tick));
+		};
+
+		let chartConfig = {
+			type: 'gauge',
+			globals: {
+				fontSize: '25px',
+			},
+			plot: {
+				tooltip: {
+					borderRadius: '5px',
+				},
+				valueBox: {
+					text: '%v', // default
+					fontSize: '35px',
+					placement: 'center',
+					rules: [{
+						text: '%v<br>EXCELLENT',
+						rule: '%v >= 700',
+					},
+					{
+						text: '%v<br>Good',
+						rule: '%v < 700 && %v > 640',
+					},
+					{
+						text: '%v<br>Fair',
+						rule: '%v < 640 && %v > 580',
+					},
+					{
+						text: '%v<br>Bad',
+						rule: '%v <  580',
+					},
+					],
+				},
+				size: '100%',
+			},
+			plotarea: {
+				marginTop: '80px',
+			},
+			scaleR: {
+				aperture: 180,
+				center: {
+					visible: false,
+				},
+				item: {
+					offsetR: 0,
+					rules: [{
+						offsetX: '15px',
+						rule: '%i == 9',
+					},],
+				},
+				labels: ['$300', '', '', '', '', '', '$580', '640', '', '', '', '$850'],
+				maxValue: 850,
+				minValue: 300,
+				ring: {
+					rules: [{
+						backgroundColor: '#9dc3e7',
+						rule: '%v <= 400',
+					},
+					{
+						backgroundColor: '#4472c7',
+						rule: '%v > 400 && %v < 700',
+					},
+					{
+						backgroundColor: '#1f4e78',
+						rule: '%v >= 700',
+					},
+					],
+					size: '50px',
+				},
+				step: 50,
+				tick: {
+					visible: false,
+				},
+			},
+			refresh: {
+				type: 'feed',
+				url: 'feed()',
+				interval: 1500,
+				resetTimeout: 1000,
+				transport: 'js',
+			},
+			series: [{
+				values: [755], // starting value
+				animation: {
+					effect: 'ANIMATION_EXPAND_VERTICAL',
+					method: 'ANIMATION_BACK_EASE_OUT',
+					sequence: 'null',
+					speed: 900,
+				},
+				backgroundColor: 'black',
+				indicator: [10, 10, 10, 10, 0.75],
+			},],
+		};
+
+		zingchart.render({
+			id: 'myChart',
+			data: chartConfig,
+			height: '100%',
+			width: '100%',
+		});
+	</script>
+</body>
+
+</html>

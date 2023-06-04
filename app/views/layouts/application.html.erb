@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PostInventory</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'fontawesome', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+	<%= javascript_pack_tag "jquerymin", 'data-turbolinks-track': 'reload' %>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+	<!-- Slider Pro Js -->
+	<%= javascript_pack_tag "sliderpromin", 'data-turbolinks-track': 'reload' %>
+
+	<!-- Slick Slider Js -->
+	<%= javascript_pack_tag "slick", 'data-turbolinks-track': 'reload' %>
+
+	<!-- Owl Carousel Js -->
+  <%= javascript_pack_tag "owlcarouselmin", 'data-turbolinks-track': 'reload' %>
+
+	<!-- Boostrap Js -->
+  <%= javascript_pack_tag "bootstrapmin", 'data-turbolinks-track': 'reload' %>
+
+  <!-- Boostrap Js -->
+  <%= javascript_pack_tag "wowanimation", 'data-turbolinks-track': 'reload' %>
+
+	<!-- Custom Js -->
+  <%= javascript_pack_tag "custom", 'data-turbolinks-track': 'reload' %>
+
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
