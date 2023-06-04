@@ -501,7 +501,7 @@ section {
 }
 
 .scrolled-header .logo {
-    background-image: url(/assests/logo_black.png) !important
+    background-image: url(/assets/logo_responsive_black.png) !important
 }
 
 .scrolled-header #cssmenu>ul>li>a {
