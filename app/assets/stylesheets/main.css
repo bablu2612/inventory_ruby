@@ -1842,10 +1842,13 @@ section.top-slider-features .slider-top-features .owl-dots {
     text-align: center;
     line-height: 20px;
     border-radius: 3px;
-    background-color: #2959ad;
-    color: #fff;
+    color: #000;
     padding: 10px;
     box-sizing: border-box;
+}
+
+.single-car .car-details ul.car-info li i img {
+    filter: invert(1);
 }
 
 .single-car .car-details ul.car-info li p {
