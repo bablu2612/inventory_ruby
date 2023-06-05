@@ -3869,3 +3869,7 @@ footer .footer-item .about-us p.footer_para {
 footer .contact_info p {
     font-size: 18px !important;
 }
+.baner_image{
+    height: 255px;
+    margin-left: -66px;
+}
