@@ -212,7 +212,7 @@
 
 							<div class="sp-thumbnails">
 							 <% @car_detail&.images&.each do |image|%>
-										<img class="sp-thumbnail" src="<%= rails_blob_path(image, only_path: true) %>" alt="" />
+								<img class="sp-thumbnail" src="<%= rails_blob_path(image, only_path: true) %>" alt="" />
 
 								<% end %>
 
