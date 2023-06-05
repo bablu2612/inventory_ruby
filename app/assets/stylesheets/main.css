@@ -3765,3 +3765,6 @@ a:visited {
 .icons a:visited {
     color: #5b40e000 !important;
 }
+.main_pageenation{
+    display: none;
+}
