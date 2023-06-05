@@ -3758,3 +3758,6 @@ ul.car-info li i img {
         margin-bottom: 20px;
     }
 }
+a:visited {
+    color: #fff !important;
+}

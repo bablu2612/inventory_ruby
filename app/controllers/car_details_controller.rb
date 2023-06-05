@@ -7,6 +7,18 @@ class CarDetailsController < ApplicationController
     @car_details = CarDetail.all
   end
 
+  def send_offer_email
+    @car = CarDetail.find(params[:id])
+    OfferMailer.send_offer_email(@car).deliver_now
+    respond_to do |format|
+        format.html { redirect_to "/single_car/#{@car.id}", notice: "Email is successfully sent." }
+
+      end
+
+
+
+  end
+
   # GET /car_details/1 or /car_details/1.json
   def show
   end

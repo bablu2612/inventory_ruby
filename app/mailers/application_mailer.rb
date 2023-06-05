@@ -1,4 +1,6 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'from@example.com'
+  # default from: 'hello@postyourcars.com'
+  default from: 'PYC Admin <hello@postyourcars.com>'
+
   layout 'mailer'
 end

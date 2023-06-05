@@ -107,7 +107,7 @@
                         <a href="/single_car">For Rent</a>
                       </div>
                       <div class="thumb-inner">
-                        <a href="/single_car"><img src="<%= car.images.attached? ? rails_blob_path(car.images.first, only_path: true) : ""%>" alt=""></a>
+                        <a href="/single_car/<%= car.id %>"><img src="<%= car.images.attached? ? rails_blob_path(car.images.first, only_path: true) : ""%>" alt=""></a>
                       </div>
                     </div>
                     <div class="down-content">
