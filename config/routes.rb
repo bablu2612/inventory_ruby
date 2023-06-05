@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :car_details
   root "car_details#index"
   get 'home/index', to: "home#index"

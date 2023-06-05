@@ -1,0 +1,34 @@
+<div class="signup_parent rounded max-w-[500px] w-full m-[auto]" style="padding: 50px 40px;">
+  <h2>Log in</h2>
+
+  <div class="w-full">
+    <div class="w-full">
+      <% if notice&.present? || alert&.present? %>
+        <div class="rounded-md p-4 mb-4 <%= alert&.present? ? "bg-#4e4a4a-100" : "bg-green-50" %>">
+          <%= notice || alert %>
+        </div>
+      <% end %>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: "form-horizontal") do |f| %>
+        <div class="form-group mb-4">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, class: "form-control" %>
+        </div>
+
+        <div class="form-group mb-4">
+          <%= f.label :password, class: "control-label" %><br />
+          <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+        </div>
+
+        <% if devise_mapping.rememberable? -%>
+          <div class="form-group mb-4 rember_me_main_container">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me, class: "control-label" %>
+          </div>
+        <% end -%>
+      
+        <div class="form-group mb-4">
+          <%= f.submit "Log in", class: 'btn btn-cstm inline-flex items-center justify-center rounded-md border border-transparent bg-black px-4 py-2 text-sm font-medium text-white shadow-sm w-full' %>
+        </div>
+      <% end %>
+  </div>
+</div>
