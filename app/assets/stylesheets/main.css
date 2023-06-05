@@ -3752,12 +3752,6 @@ ul.car-info li i img {
 .down-content ul.car-info li:hover i img {
     filter: invert(0)
 }
-
-@media (max-width: 767px) {
-    .single-car .recent-car-content {
-        margin-bottom: 20px;
-    }
-}
 a:visited {
     color: #fff !important;
 }
@@ -3768,3 +3762,78 @@ a:visited {
 .main_pageenation{
     display: none;
 }
+.on-grids .car-item .down-content, .recent-cars .car-item .down-content {
+    padding: 20px 10px; 
+}
+.on-grids .car-item .down-content ul li .item p, .recent-cars .car-item .down-content ul li .item p { 
+    font-size: 10px;    line-height: normal;
+}
+.item p {
+    clear: both;
+}
+
+.on-grids .car-item .down-content ul, .recent-cars .car-item .down-content ul {
+    display: flex;
+}
+
+.on-grids .car-item .down-content ul li, .recent-cars .car-item .down-content ul li {
+    margin: 0;
+    width: calc(100%/2 - 10px);
+    border: 0;
+}
+.on-grids .car-item .down-content ul, .recent-cars .car-item .down-content ul {
+    display: flex;
+    gap: 10px;
+    text-align: center;
+}
+
+@media (max-width: 991px) and (min-width: 768px){
+    .recent-car-content .row .col-md-6 {
+        width: 100%;
+        max-width: 100%;
+        flex: 100%;
+    }
+    .recent-car-content>.row> .col-md-8.col-sm-12.px-0 {
+        max-width: 400px;    flex: 100%;
+    }
+    .recent-car-content>.row> .col-md-4{
+        max-width: calc(100% - 400px);   flex: 100%;
+    }
+    .sidebar-widgets {
+        margin-left: 0px;
+        margin-top: 0;
+        border-top: 0;
+        padding-top: 0;
+    }
+    body {
+        margin: 0;
+    }
+}
+@media (max-width: 767px) {
+    .single-car .recent-car-content {
+        margin-bottom: 20px;
+    }
+    html body {
+        margin: 0;
+    }
+    .recent-car-content >.row {
+        margin: 0;
+    }
+    .on-grids .car-item .down-content ul li .item, .recent-cars .car-item .down-content ul li .item { 
+        min-height: 80px; 
+    }
+    .recent-cars .car-item .down-content ul li,.on-grids .car-item .down-content ul li .item, .recent-cars .car-item .down-content ul li .item{
+        display: grid;
+        place-content: center;
+    }
+    .on-grids .car-item .down-content ul li, .recent-cars .car-item .down-content ul li {  
+        width: calc(100%/2 - 5px);
+    }
+    .on-grids .car-item .down-content ul, .recent-cars .car-item .down-content ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
+
+ 
