@@ -26,7 +26,7 @@ class CarDetailsController < ApplicationController
 
     respond_to do |format|
       if @car_detail.save
-        format.html { redirect_to car_detail_url(@car_detail), notice: "Car detail was successfully created." }
+        format.html { redirect_to admin_path, notice: "Car detail was successfully created." }
         format.json { render :show, status: :created, location: @car_detail }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,7 +39,7 @@ class CarDetailsController < ApplicationController
   def update
     respond_to do |format|
       if @car_detail.update(car_detail_params)
-        format.html { redirect_to car_detail_url(@car_detail), notice: "Car detail was successfully updated." }
+        format.html { redirect_to admin_path, notice: "Car detail was successfully updated." }
         format.json { render :show, status: :ok, location: @car_detail }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -53,7 +53,7 @@ class CarDetailsController < ApplicationController
     @car_detail.destroy
 
     respond_to do |format|
-      format.html { redirect_to car_details_url, notice: "Car detail was successfully destroyed." }
+      format.html { redirect_to admin_path, notice: "Car detail was successfully destroyed." }
       format.json { head :no_content }
     end
   end
@@ -66,6 +66,6 @@ class CarDetailsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def car_detail_params
-      params.require(:car_detail).permit(:year, :make, :model, :trim, :mileage, :fuel_type, :color, :vehicle_condition, :title_status, :zip_code, images: [])
+      params.require(:car_detail).permit(:year,:pointer,:mmr, :make, :model, :trim, :mileage, :fuel_type, :color, :vehicle_condition, :title_status, :zip_code, images: [])
     end
 end

@@ -174,37 +174,36 @@
 					</div>
 					<div class="col-md-6">
 						<div class="car-details">
-							<h4>2017 BMW X5 xDrive35i</h4>
-							<span>$45.000</span>
+							<h4><%= "#{@car_detail.year} #{@car_detail.make} #{@car_detail.model} #{@car_detail.trim}" %></h4>
 							<div class="container">
 								<div class="row">
 									<ul class="car-info col-md-6">
 										<li><i class=""><img src="/assets/logo_year.png" alt="" /></i>
-											<p>2018</p>
+											<p><%= @car_detail.year %></p>
 										</li>
 										<li><i class="flaticon-shift"></i>
 											<p>Automatic</p>
 										</li>
 										<li><i class=""><img src="/assets/logo_mileage.png" alt="" /></i>
-											<p>36,000 mile</p>
+											<p><%= @car_detail.mileage %> mile</p>
 										</li>
 										<li><i class=""><img src="/assets/logo_fuel-type.png" alt="" /></i>
-											<p>Gasoline</p>
+											<p><%= @car_detail.fuel_type %></p>
 										</li>
 									</ul>
 									<ul class="car-info col-md-6">
 										<li><i class=""><img src="/assets/logo_exterior_color.png" alt="" /></i>
-											<p>White</p>
+											<p><%= @car_detail.color %></p>
 										</li>
 										<li><i class=""><img src="/assets/logo_vehicle_condition.png"
 													alt="" /></i>
-											<p>★★★★</p>
+											<p>★★★★(<%= @car_detail.vehicle_condition %>)</p>
 										</li>
 										<li><i class=""><img src="/assets/logo_title_status.png" alt="" /></i>
-											<p>Paid-Off</p>
+											<p><%= @car_detail.title_status %></p>
 										</li>
 										<li><i class=""><img src="/assets/logo_zip_code.png" alt="" /></i>
-											<p>160002</p>
+											<p><%= @car_detail.zip_code %></p>
 										</li>
 									</ul>
 								</div>

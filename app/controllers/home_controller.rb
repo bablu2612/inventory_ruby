@@ -3,5 +3,7 @@ class HomeController < ApplicationController
   end
 
   def single_car
+     @car_detail = CarDetail.find(params[:id])
+
   end
 end

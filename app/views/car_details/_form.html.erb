@@ -6,7 +6,7 @@
       <img src="<%= asset_path("logo_black.png")%>" class="w-[120px] m-auto">
    </div>
    <div class="main_header font-extrabold w-fit ml-auto mr-auto  mt-[50px] text-[#3c3838]">
-      <h2 class="border-none pl-0 font-bold text-3xl">Add a new Car</h2>
+      <h2 class="border-none pl-0 font-bold text-3xl"><%= params[:action] == "edit" ? "Edit Car Detail" : "Add a new Car" %></h2>
    </div>
    <div class="form_main_div w-full max-w-full mt-[40px]">
       <h6 class="font-black">Please fill out the following information:</h6>
@@ -72,16 +72,46 @@
             </div>
          </div>
 
+
+         <div class="flex gap-[15px]">
+            <div class="form_group mt-[11px] max-w-full w-full">
+               <label class="text-slate-600 font-bold">
+               MMR<span class="text-red-500">*</span>
+               </label>
+               <%= form.number_field :mmr, placeholder: "Enter MMR", class: "block rounded-md border-0 outline-none px-3 py-2 mt-2 w-full" %>
+               <% if car_detail.errors.has_key?(:mmr) %>
+               <div class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">MMR is required</div>
+               <% end %>
+            </div>
+            <div class="form_group mt-[11px] max-w-full w-full">
+               <label class="text-slate-600 font-bold">
+               Pointer<span class="text-red-500">*</span>
+               </label>
+               <%= form.number_field :pointer, placeholder: "Enter pointer", class: "block rounded-md border-0 outline-none px-3 py-2 mt-2 w-full" %>
+               <% if car_detail.errors.has_key?(:pointer) %>
+               <div class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">Pointer is required</div>
+               <% end %>
+            </div>
+         </div>
+
+
+
         <div class="flex gap-[15px]">
             <div class="form_group mt-[11px] max-w-full w-full">
                <label class="text-slate-600 font-bold">
                Fuel Type<span class="text-red-500">*</span>
                </label>
-               <%= form.text_field :fuel_type, placeholder: "Enter Fuel Type", class: "block rounded-md border-0 outline-none px-3 py-2 mt-2 w-full" %>
+                              <%= form.select :fuel_type, ["Gasoline", "Diesel", "Electricity"], class: "block rounded-md border-0 outline-none px-3 py-2 mt-2 w-full" %>
+
                <% if car_detail.errors.has_key?(:fuel_type) %>
                <div class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">Fuel Type is required</div>
                <% end %>
             </div>
+
+
+            
+
+
             <div class="form_group mt-[11px] max-w-full w-full">
                <label class="text-slate-600 font-bold">
                Color<span class="text-red-500">*</span>
@@ -98,7 +128,7 @@
                <label class="text-slate-600 font-bold">
                 Vehicle Condition <span class="text-red-500">*</span>
                </label>
-               <%= form.select :vehicle_condition, ["Clean", "Average", "Rough", "Damaged", "Not sure"], class: "block rounded-md border-0 outline-none px-3 py-2 mt-2 w-full" %>
+               <%= form.select :vehicle_condition, ["Clean", "Minor damage", "Damage", "Accident", "Salvage"], class: "block rounded-md border-0 outline-none px-3 py-2 mt-2 w-full" %>
                <% if car_detail.errors.has_key?(:vehicle_condition) %>
                <div class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">Vehicle Condition is required</div>
                <% end %>
@@ -138,7 +168,7 @@
           </div>
       </form>
       </div>
-      <div class="sponsers_comapnies mt-[40px]">
+      <div class="sponsers_comapnies mt-[40px] hidden">
          <div class="row1 flex justify-between gap-3 align-content-center">
             <div class="w-[33.33%] flex-auto border-[1px] border-slate-200 rounded flex align-items-center p-2 justify-center">
                <img src="<%= asset_path("deallerTrackLogo.jpeg")%>" class="max-w-[120px] w-full">
