@@ -34,10 +34,18 @@ class CarDetailsController < ApplicationController
 
   # POST /car_details or /car_details.json
   def create
-    @car_detail = CarDetail.new(car_detail_params)
+    low= car_detail_params[:mmr].to_i - (car_detail_params[:mmr].to_i*10)/100
+    good=car_detail_params[:mmr].to_i - (car_detail_params[:mmr].to_i*5)/100
+    best=car_detail_params[:mmr].to_i - (car_detail_params[:mmr].to_i*3)/100
 
+
+   
+    @car_detail = CarDetail.new(car_detail_params)
+    
     respond_to do |format|
       if @car_detail.save
+        @car_detail.update(low: low, good: good, best: best)
+
         format.html { redirect_to admin_path, notice: "Car detail was successfully created." }
         format.json { render :show, status: :created, location: @car_detail }
       else
@@ -49,8 +57,16 @@ class CarDetailsController < ApplicationController
 
   # PATCH/PUT /car_details/1 or /car_details/1.json
   def update
+    
+    # binding.pry
+    
     respond_to do |format|
+      low= car_detail_params[:mmr].to_i - (car_detail_params[:mmr].to_i*10)/100
+      good=car_detail_params[:mmr].to_i - (car_detail_params[:mmr].to_i*5)/100
+      best=car_detail_params[:mmr].to_i - (car_detail_params[:mmr].to_i*3)/100
+     
       if @car_detail.update(car_detail_params)
+          @car_detail.update(low: low, good: good, best: best)
         format.html { redirect_to admin_path, notice: "Car detail was successfully updated." }
         format.json { render :show, status: :ok, location: @car_detail }
       else
