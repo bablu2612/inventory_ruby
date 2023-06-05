@@ -327,11 +327,7 @@
 
 	<script>
 		ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768ff5"];
-		let feed = (callback) => {
-			let tick = {};
-			tick.plot0 = Math.ceil(350 + Math.random() * 500);
-			callback(JSON.stringify(tick));
-		};
+		
 
 		let chartConfig = {
 			type: 'gauge',
@@ -342,28 +338,7 @@
 				tooltip: {
 					borderRadius: '5px',
 				},
-				valueBox: {
-					text: '%v', // default
-					fontSize: '35px',
-					placement: 'center',
-					rules: [{
-						text: '%v<br>EXCELLENT',
-						rule: '%v >= 700',
-					},
-					{
-						text: '%v<br>Good',
-						rule: '%v < 700 && %v > 640',
-					},
-					{
-						text: '%v<br>Fair',
-						rule: '%v < 640 && %v > 580',
-					},
-					{
-						text: '%v<br>Bad',
-						rule: '%v <  580',
-					},
-					],
-				},
+			
 				size: '100%',
 			},
 			plotarea: {
@@ -381,17 +356,17 @@
 						rule: '%i == 9',
 					},],
 				},
-				labels: ['$300', '', '', '', '', '', '$580', '640', '', '', '', '$850'],
+				labels: ['Low','','','',  'Good','','','',  'Best'],
 				maxValue: 850,
-				minValue: 300,
+				minValue: 150,
 				ring: {
 					rules: [{
 						backgroundColor: '#9dc3e7',
-						rule: '%v <= 400',
+						rule: '%v <= 200',
 					},
 					{
 						backgroundColor: '#4472c7',
-						rule: '%v > 400 && %v < 700',
+						rule: '%v > 200 && %v < 700',
 					},
 					{
 						backgroundColor: '#1f4e78',
@@ -400,28 +375,18 @@
 					],
 					size: '50px',
 				},
-				step: 50,
+				// step: 50,
 				tick: {
 					visible: false,
 				},
 			},
-			refresh: {
-				type: 'feed',
-				url: 'feed()',
-				interval: 1500,
-				resetTimeout: 1000,
-				transport: 'js',
-			},
+			
 			series: [{
-				values: [755], // starting value
-				animation: {
-					effect: 'ANIMATION_EXPAND_VERTICAL',
-					method: 'ANIMATION_BACK_EASE_OUT',
-					sequence: 'null',
-					speed: 900,
-				},
-				backgroundColor: 'black',
-				indicator: [10, 10, 10, 10, 0.75],
+				// values: ["<%= @car_detail.pointer.to_i %>"], // starting value
+				values: [400], // starting value
+                backgroundColor: '#009688',
+
+			
 			},],
 		};
 
