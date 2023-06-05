@@ -3476,7 +3476,7 @@ footer .footer-item h2 {
     position: relative;
     margin-top: 0px;
     margin-bottom: 40px;
-    font-size: 16px;
+    /* font-size: 16px; */
     color: #fff;
     font-weight: 700;
     text-transform: uppercase
@@ -3487,7 +3487,7 @@ footer .footer-item h2 em {
     color: #2959ad
 }
 
-footer .footer-item h2:after {
+/* footer .footer-item h2:after {
     width: 30px;
     height: 3px;
     background-color: #2959ad;
@@ -3495,7 +3495,7 @@ footer .footer-item h2:after {
     top: 30px;
     position: absolute;
     content: ''
-}
+} */
 
 footer .footer-item p {
     color: #fff;
@@ -3839,3 +3839,33 @@ a:visited {
  .vin_number{
     font-weight: 700;
  }
+
+ footer {
+    background: url("https://www.postyourcars.com/footerweb1.a4ce28094b82e9bd9e0a.png");
+}
+
+footer .about-us {
+    text-align: center;
+}
+
+footer .about-us h2.contact_text {
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #fff;
+    font-size: 24px !important;
+    line-height: 29px;
+    letter-spacing: .3px;
+}
+
+footer .footer-item .about-us p.footer_para {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px !important;
+    line-height: 20px;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+footer .contact_info p {
+    font-size: 18px !important;
+}
