@@ -3761,3 +3761,7 @@ ul.car-info li i img {
 a:visited {
     color: #fff !important;
 }
+
+.icons a:visited {
+    color: #5b40e000 !important;
+}
