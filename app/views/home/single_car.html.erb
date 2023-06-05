@@ -237,6 +237,9 @@
 										<li><i class=""><img src="/assets/logo_fuel-type.png" alt="" /></i>
 											<p><%= @car_detail.fuel_type %></p>
 										</li>
+										<li class="vin_number"><i class="">VIN#</i>
+											<p><%= @car_detail.vin %></p>
+										</li>
 									</ul>
 									<ul class="car-info col-md-6">
 										
@@ -255,7 +258,7 @@
 							</div>
 							<div class="similar-info">
 								<div class="primary-button">
-									<a href="/send_offer_mail_request/<%= @car_detail&.id %>" class="text-color-white">Make Offer <i class="fa fa-dollar"></i></a>
+									<a href="/send_offer_mail_request/<%= @car_detail&.id %>" class="text-color-white">PURCHASE INQUIRY</a>
 								</div>
 							</div>
 						</div>

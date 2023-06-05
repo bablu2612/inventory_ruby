@@ -96,18 +96,17 @@
 
 
         <div class="flex gap-[15px]">
-            <div class="form_group mt-[11px] max-w-full w-full">
-               <label class="text-slate-600 font-bold">
-               Fuel Type<span class="text-red-500">*</span>
-               </label>
-                              <%= form.select :fuel_type, ["Gasoline", "Diesel", "Electricity"], class: "block rounded-md border-0 outline-none px-3 py-2 mt-2 w-full" %>
+        
 
-               <% if car_detail.errors.has_key?(:fuel_type) %>
-               <div class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">Fuel Type is required</div>
+        <div class="form_group mt-[11px] max-w-full w-full">
+               <label class="text-slate-600 font-bold">
+               Vin#<span class="text-red-500">*</span>
+               </label>
+               <%= form.text_field :vin, placeholder: "Enter vin", class: "block rounded-md border-0 outline-none px-3 py-2 mt-2 w-full" %>
+               <% if car_detail.errors.has_key?(:vin) %>
+               <div class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">VIN is required</div>
                <% end %>
             </div>
-
-
             
 
 
@@ -142,6 +141,19 @@
                <% end %>
             </div>
          </div>
+
+             <div class="form_group mt-[11px] max-w-full w-full">
+               <label class="text-slate-600 font-bold">
+               Fuel Type<span class="text-red-500">*</span>
+               </label>
+                              <%= form.select :fuel_type, ["Gasoline", "Diesel", "Electricity"], class: "block rounded-md border-0 outline-none px-3 py-2 mt-2 w-full" %>
+
+               <% if car_detail.errors.has_key?(:fuel_type) %>
+               <div class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">Fuel Type is required</div>
+               <% end %>
+            </div>
+
+
         <div class="flex gap-[15px] align-items-end mt-[20px]">
           <div class="upload_files_main w-full">
               <div class="max-w-full">

@@ -111,7 +111,7 @@
                       </div>
                     </div>
                     <div class="down-content">
-                      <a href="/single_car"><h4><%= "#{car.year} #{car.make} #{car.model} #{car.trim}" %></h4></a>
+                      <a href="/single_car/<%= car.id %>"><h4><%= "#{car.year} #{car.make} #{car.model} #{car.trim}" %></h4></a>
                       <ul class="car-info">
                         <li><div class="item"><i class=""><img  src="/assets/logo_mileage.png" alt="" /></i><p><%= car.mileage%> mile</p></div></li>
                         <li><div class="item"><i class=""><img  src="/assets/logo_vehicle_condition.png" alt="" /></i><p><%= car.vehicle_condition %></p></div></li>
