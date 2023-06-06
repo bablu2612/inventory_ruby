@@ -200,7 +200,7 @@
 			<div class="recent-car-content mt-3">
 				<div class="row">
 					<div class="col-md-6">
-						<div id="single-car" class="slider-pro">
+						<div id="single-car" class="slider-pro <%= @car_detail&.images&.length === 1 ? 'oneImageSlide' : '' %>">
 							<div class="sp-slides">
                               <% @car_detail&.images&.each do |image|%>
 									<div class="sp-slide">

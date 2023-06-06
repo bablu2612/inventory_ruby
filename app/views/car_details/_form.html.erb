@@ -21,7 +21,7 @@
                <% end %>
             </div>
 
-             <div class="form_group mb-4 mt-[11px] max-w-full w-full">
+             <div class="form_group mb-4 mt-[11px] max-w-full w-full hidden">
                <label class="text-slate-600 font-bold">
                Body Type<span class="text-red-500">*</span>
                </label>
@@ -54,7 +54,7 @@
                <% end %>
             </div>
 
-            <div class="form_group mb-4 mt-[11px] max-w-full w-full">
+            <div class="form_group mb-4 mt-[11px] max-w-full w-full hidden">
                <label class="text-slate-600 font-bold">
                Drivetrain<span class="text-red-500">*</span>
                </label>
@@ -65,7 +65,7 @@
                <% end %>
             </div>
 
-            <div class="form_group mb-4 mt-[11px] max-w-full w-full">
+            <div class="form_group mb-4 mt-[11px] max-w-full w-full hidden">
                <label class="text-slate-600 font-bold">
                Transmission<span class="text-red-500">*</span>
                </label>
@@ -81,7 +81,7 @@
                <label class="text-slate-600 font-bold">
                Fuel Type<span class="text-red-500">*</span>
                </label>
-                              <%= form.select :fuel_type, ["Diesel","Electric","Gasoline", "Hybrid", "Plugin Hybrid"], class: "block rounded-md border-0 outline-none px-3 py-2 mt-2 w-full" %>
+                              <%= form.select :fuel_type, ["Gasoline", "Diesel", "Electricity"], class: "block rounded-md border-0 outline-none px-3 py-2 mt-2 w-full" %>
 
                <% if car_detail.errors.has_key?(:fuel_type) %>
                <div class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">Fuel Type is required</div>
