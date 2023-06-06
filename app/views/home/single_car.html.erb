@@ -225,16 +225,20 @@
 							<div class="container">
 								<div class="row">
 									<ul class="car-info col-md-6">
-										<li><i class=""><img src="/assets/logo_exterior_color.png" alt="" /></i>
+										<li><i class=""><img src="/assets/icons/color.png" alt="" /></i>
 											<p><%= @car_detail.color %></p>
 										</li>
 										
-
-										<li><i class=""><img src="/assets/logo_mileage.png" alt="" /></i>
-											<p><%= @car_detail.mileage %> mile</p>
+										<li><i class=""><img src="/assets/icons/transmission_icon.png" alt="" /></i>
+											<p><%= @car_detail.transmission %></p>
 										</li>
-										<li><i class=""><img src="/assets/logo_fuel-type.png" alt="" /></i>
+
+										
+										<li><i class=""><img src="/assets/icons/fuel_type.png" alt="" /></i>
 											<p><%= @car_detail.fuel_type %></p>
+										</li>
+										<li><i class=""><img src="/assets/icons/vehicle_condition.png" alt="" /></i>
+											<p><%= @car_detail.vehicle_condition %> mile</p>
 										</li>
 										<li class="vin_number"><i class="">VIN#</i>
 											<p><%= @car_detail.vin %></p>
@@ -242,17 +246,24 @@
 									</ul>
 									<ul class="car-info col-md-6">
 										
-										<li><i class=""><img src="/assets/logo_vehicle_condition.png"
+										<li><i class=""><img src="/assets/icons/body_type.png"
 													alt="" /></i>
-											<p><%= @car_detail.vehicle_condition %></p>
+											<p><%= @car_detail.body_type %></p>
 										</li>
-										<li><i class=""><img src="/assets/logo_title_status.png" alt="" /></i>
+
+										<li><i class=""><img src="/assets/icons/drivetrain.png"
+													alt="" /></i>
+											<p><%= @car_detail.drivetrain %></p>
+										</li>
+										<li><i class=""><img src="/assets/icons/zip_code.png" alt="" /></i>
+											<p><%= @car_detail.zip_code %></p>
+										</li>
+
+										<li><i class=""><img src="/assets/icons/title_status.png" alt="" /></i>
 											<p><%= @car_detail.title_status %></p>
 										</li>
 										
-										<li><i class=""><img src="/assets/logo_zip_code.png" alt="" /></i>
-											<p><%= @car_detail.zip_code %></p>
-										</li>
+										
 									</ul>
 								</div>
 							</div>
