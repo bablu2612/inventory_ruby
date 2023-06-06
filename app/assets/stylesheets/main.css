@@ -1824,7 +1824,9 @@ section.top-slider-features .slider-top-features .owl-dots {
     margin: 0;
     list-style: none
 }
-
+.oneImageSlide .sp-slides {
+    transform: unset!important;
+}
 .single-car .car-details ul.car-info li {
     border-bottom: 1px solid #eee;
     width: 100%;
