@@ -210,14 +210,13 @@
 								<% end %>
 							</div>
 
-							<div class="sp-thumbnails">
-							 <% @car_detail&.images&.each do |image|%>
-								<img class="sp-thumbnail" src="<%= rails_blob_path(image, only_path: true) %>" alt="" />
-
-								<% end %>
-
-								
-							</div>
+							<% if @car_detail&.images&.length > 1 %>
+								<div class="sp-thumbnails">
+									<% @car_detail&.images&.each do |image|%>
+										<img class="sp-thumbnail" src="<%= rails_blob_path(image, only_path: true) %>" alt="" />
+									<% end %>
+								</div>
+							<% end %>
 						</div>
 					</div>
 					<div class="col-md-6">

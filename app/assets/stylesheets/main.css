@@ -3873,3 +3873,10 @@ footer .contact_info p {
     height: 255px;
     margin-left: -66px;
 }
+
+.quick_offer_section{
+    display: none;
+}
+.holder_canvas{
+    display: none;
+}
