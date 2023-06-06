@@ -3982,3 +3982,11 @@ footer .contact_info p {
 }
 
 
+
+@media screen and (max-width:575px){
+    .image_section_above .right-section .range span {
+        font-size: 14px;
+    }
+}
+
+
