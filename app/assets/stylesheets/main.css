@@ -1851,7 +1851,7 @@ section.top-slider-features .slider-top-features .owl-dots {
 }
 
 .single-car .car-details ul.car-info li i img {
-    /* filter: invert(1); */
+    filter: invert(1);
 }
 
 .single-car .car-details ul.car-info li p {
