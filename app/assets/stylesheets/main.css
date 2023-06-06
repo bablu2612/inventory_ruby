@@ -3880,3 +3880,18 @@ footer .contact_info p {
 .holder_canvas{
     display: none;
 }
+
+.listing_page.thumb-inner {
+    min-height: 240px;
+}
+
+.listing_page.thumb-inner a img {
+    height: 240px;
+    object-fit: cover;
+}
+
+.listing_page.thumb-inner a {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
