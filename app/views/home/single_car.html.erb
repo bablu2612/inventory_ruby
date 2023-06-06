@@ -257,7 +257,14 @@
 								</div>
 							</div>
 							<div class="image_section_above">
-										<img class="baner_image" src="/assets/details_page_heading_image.jpeg" alt="" />
+									<div class="left-section">
+												<img class="baner_image" src="/assets/meter_chart.jpeg" alt="" />
+									</div>
+
+									<div class="right-section">
+                                     <div class="pmv_rate"> PMV RATE </div>
+									 <div class="range"> <span class="price"> $<%= number_with_delimiter(@car_detail&.low.to_i) %> </span> ~ <span class="price"> $ <%= number_with_delimiter(@car_detail&.best.to_i) %> </span>
+									</div>
 
 							</div>
 							<div class="similar-info">
