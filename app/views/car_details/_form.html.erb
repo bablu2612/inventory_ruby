@@ -10,8 +10,8 @@
    <div class="form_main_div w-full max-w-full mt-[40px]">
       <h6 class="font-black">Please fill out the following information:</h6>
       <form class="vehicle_appraisel_form mt-[10px]">
-         <div class="flex gap-[15px]">
-            <div class="form_group mt-[11px] max-w-full w-full">
+        
+            <div class="form_group mb-4 mt-[11px] max-w-full w-full">
                <label class="text-slate-600 font-bold">
                Year<span class="text-red-500">*</span>
                </label>
@@ -20,7 +20,20 @@
                <div class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">Year is required</div>
                <% end %>
             </div>
-            <div class="form_group mt-[11px] max-w-full w-full">
+
+             <div class="form_group mb-4 mt-[11px] max-w-full w-full">
+               <label class="text-slate-600 font-bold">
+               Body Type<span class="text-red-500">*</span>
+               </label>
+                <%= form.select :body_type, ["Compact", "Convertible", "Coupe","Crossover","Pickup","Sedan","SUV","Wagon"], class: "block rounded-md border-0 outline-none px-3 py-2 mt-2 w-full" %>
+
+               <% if car_detail.errors.has_key?(:body_type) %>
+               <div class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">Body Type is required</div>
+               <% end %>
+            </div>
+
+
+            <div class="form_group mb-4 mt-[11px] max-w-full w-full">
                <label class="text-slate-600 font-bold">
                Make<span class="text-red-500">*</span>
                </label>
@@ -29,9 +42,9 @@
                <div class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">Year is required</div>
                <% end %>
             </div>
-         </div>
-         <div class="flex gap-[15px]">
-            <div class="form_group mt-[11px] max-w-full w-full">
+         
+        
+            <div class="form_group mb-4 mt-[11px] max-w-full w-full">
                <label class="text-slate-600 font-bold">
                Model<span class="text-red-500">*</span>
                </label>
@@ -40,7 +53,43 @@
                <div class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">Model is required</div>
                <% end %>
             </div>
-            <div class="form_group mt-[11px] max-w-full w-full">
+
+            <div class="form_group mb-4 mt-[11px] max-w-full w-full">
+               <label class="text-slate-600 font-bold">
+               Drivetrain<span class="text-red-500">*</span>
+               </label>
+                <%= form.select :drivetrain, ["AWD/4WD", "Front Wheel Drive", "Rear Wheel Drive"], class: "block rounded-md border-0 outline-none px-3 py-2 mt-2 w-full" %>
+
+               <% if car_detail.errors.has_key?(:drivetrain) %>
+               <div class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">Drivetrain is required</div>
+               <% end %>
+            </div>
+
+            <div class="form_group mb-4 mt-[11px] max-w-full w-full">
+               <label class="text-slate-600 font-bold">
+               Transmission<span class="text-red-500">*</span>
+               </label>
+                <%= form.select :transmission, ["Automatic", "Manual"], class: "block rounded-md border-0 outline-none px-3 py-2 mt-2 w-full" %>
+
+               <% if car_detail.errors.has_key?(:transmission) %>
+               <div class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">Transmission is required</div>
+               <% end %>
+            </div>
+
+
+            <div class="form_group mb-4 mt-[11px] max-w-full w-full">
+               <label class="text-slate-600 font-bold">
+               Fuel Type<span class="text-red-500">*</span>
+               </label>
+                              <%= form.select :fuel_type, ["Diesel","Electric","Gasoline", "Hybrid", "Plugin Hybrid"], class: "block rounded-md border-0 outline-none px-3 py-2 mt-2 w-full" %>
+
+               <% if car_detail.errors.has_key?(:fuel_type) %>
+               <div class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">Fuel Type is required</div>
+               <% end %>
+            </div>
+
+
+            <div class="form_group mb-4 mt-[11px] max-w-full w-full">
                <label class="text-slate-600 font-bold">
                Trim<span class="text-red-500">*</span>
                </label>
@@ -49,9 +98,9 @@
                <div class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">Trim is required</div>
                <% end %>
             </div>
-         </div>
-         <div class="flex gap-[15px]">
-            <div class="form_group mt-[11px] max-w-full w-full">
+         
+        
+            <div class="form_group mb-4 mt-[11px] max-w-full w-full">
                <label class="text-slate-600 font-bold">
                Mileage<span class="text-red-500">*</span>
                </label>
@@ -60,7 +109,7 @@
                <div class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">Mileage is required</div>
                <% end %>
             </div>
-            <div class="form_group mt-[11px] max-w-full w-full">
+            <div class="form_group mb-4 mt-[11px] max-w-full w-full">
                <label class="text-slate-600 font-bold">
                Zip Code<span class="text-red-500">*</span>
                </label>
@@ -69,11 +118,11 @@
                <div class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">Zipcode is required</div>
                <% end %>
             </div>
-         </div>
+        
 
 
-         <div class="flex gap-[15px]">
-            <div class="form_group mt-[11px] max-w-full w-full">
+         
+            <div class="form_group mb-4 mt-[11px] max-w-full w-full">
                <label class="text-slate-600 font-bold">
                MMR<span class="text-red-500">*</span>
                </label>
@@ -83,34 +132,17 @@
                <% end %>
             </div>
 
-            <div class="form_group mt-[11px] max-w-full w-full">
-               <label class="text-slate-600 font-bold">
-               Fuel Type<span class="text-red-500">*</span>
-               </label>
-                              <%= form.select :fuel_type, ["Gasoline", "Diesel", "Electricity"], class: "block rounded-md border-0 outline-none px-3 py-2 mt-2 w-full" %>
+            
 
-               <% if car_detail.errors.has_key?(:fuel_type) %>
-               <div class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">Fuel Type is required</div>
-               <% end %>
-            </div>
-
-            <div class="form_group mt-[11px] max-w-full w-full hidden">
-               <label class="text-slate-600 font-bold">
-               Pointer<span class="text-red-500">*</span>
-               </label>
-               <%= form.number_field :pointer, placeholder: "Enter pointer", class: "block rounded-md border-0 outline-none px-3 py-2 mt-2 w-full" %>
-               <% if car_detail.errors.has_key?(:pointer) %>
-               <div class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">Pointer is required</div>
-               <% end %>
-            </div>
-         </div>
+            
+         
 
 
 
-        <div class="flex gap-[15px]">
+      
         
 
-        <div class="form_group mt-[11px] max-w-full w-full">
+           <div class="form_group mb-4 mt-[11px] max-w-full w-full">
                <label class="text-slate-600 font-bold">
                Vin#<span class="text-red-500">*</span>
                </label>
@@ -122,7 +154,7 @@
             
 
 
-            <div class="form_group mt-[11px] max-w-full w-full">
+            <div class="form_group mb-4 mt-[11px] max-w-full w-full">
                <label class="text-slate-600 font-bold">
                Color<span class="text-red-500">*</span>
                </label>
@@ -131,10 +163,10 @@
                <div class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">Color is required</div>
                <% end %>
             </div>
-         </div>
+        
 
-         <div class="flex gap-[15px] align-items-end">
-            <div class="form_group mt-[11px] max-w-full w-full">
+        
+            <div class="form_group mb-4 mt-[11px] max-w-full w-full">
                <label class="text-slate-600 font-bold">
                 Vehicle Condition <span class="text-red-500">*</span>
                </label>
@@ -143,7 +175,7 @@
                <div class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">Vehicle Condition is required</div>
                <% end %>
             </div>
-            <div class="form_group mt-[11px] max-w-full w-full">
+            <div class="form_group mb-4 mt-[11px] max-w-full w-full">
                <label class="text-slate-600 font-bold">
                 Title Status <span class="text-red-500">*</span>
                </label>
@@ -152,7 +184,7 @@
                <div class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">Title Status is required</div>
                <% end %>
             </div>
-         </div>
+        
 
              
 
@@ -175,7 +207,7 @@
           </div>
         </div>
         
-          <div class="form_group mt-[11px]">
+          <div class="form_group mb-4 mt-[11px]">
   
                 <%= form.submit "Submit", class: "group relative h-12 w-48 overflow-hidden rounded-lg bg-blue-500 text-white text-lg shadow relative text-white font-bold opacity-1 bg-[#0080ff]" %>
               
