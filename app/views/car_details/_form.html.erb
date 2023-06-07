@@ -122,7 +122,7 @@
 
 
          
-            <div class="form_group mb-4 mt-[11px] max-w-full w-full">
+            <div class="form_group mb-4 mt-[11px] max-w-full w-full hidden">
                <label class="text-slate-600 font-bold">
                MMR<span class="text-red-500">*</span>
                </label>
@@ -134,7 +134,25 @@
 
             
 
-            
+            <div class="form_group mb-4 mt-[11px] max-w-full w-full">
+               <label class="text-slate-600 font-bold">
+               Min<span class="text-red-500">*</span>
+               </label>
+               <%= form.number_field :low, placeholder: "Enter min price", class: "block rounded-md border-0 outline-none px-3 py-2 mt-2 w-full" %>
+               <% if car_detail.errors.has_key?(:low) %>
+               <div class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">Min is required</div>
+               <% end %>
+            </div>
+
+            <div class="form_group mb-4 mt-[11px] max-w-full w-full">
+               <label class="text-slate-600 font-bold">
+               Max<span class="text-red-500">*</span>
+               </label>
+               <%= form.number_field :best, placeholder: "Enter max price", class: "block rounded-md border-0 outline-none px-3 py-2 mt-2 w-full" %>
+               <% if car_detail.errors.has_key?(:best) %>
+               <div class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">Max is required</div>
+               <% end %>
+            </div>
          
 
 
