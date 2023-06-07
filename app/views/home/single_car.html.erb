@@ -231,7 +231,7 @@
 										
 
 										<li><i class=""><img src="/assets/logo_mileage.png" alt="" /></i>
-											<p><%= @car_detail.mileage %> mile</p>
+											<p><%= @car_detail.mileage %> miles</p>
 										</li>
 										<li><i class=""><img src="/assets/logo_fuel-type.png" alt="" /></i>
 											<p><%= @car_detail.fuel_type %></p>
@@ -263,9 +263,12 @@
 
 									<div class="right-section">
                                      <div class="pmv_rate"> Post Market Value </div>
-									 <div class="sub-heading"> Pre-negotiated price range </div>
+									 
 									 <div class="range"> <span class="price"> $<%= number_with_delimiter(@car_detail&.low.to_i) %> </span> ~ <span class="price"> $ <%= number_with_delimiter(@car_detail&.best.to_i) %> </span>
+									
+									
 									</div>
+									<div class="sub-heading"> Pre-negotiated price range </div>
 
 							</div>
 							<div class="similar-info">

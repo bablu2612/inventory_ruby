@@ -59,6 +59,21 @@ section {
     -o-transition: all 0.3s;
     transition: all 0.3s
 }
+html body .asking_price_modal_body_container .body_form .form_control input {
+    border: 0;
+    border-bottom: 1px solid gray;
+    border-radius: 0;
+    box-shadow: unset;
+} 
+html body .asking_price_modal_body_container .modal_body_footer {   
+    flex-direction: row;
+}
+.asking_price_modal_body_container .body_form .form_control {
+    margin-bottom: 15px;
+}
+.asking_price_modal_body_container .modal_body_footer button {
+    flex: 50%;
+}
 
 .primary-button a i {
     font-size: 13px;
@@ -1541,7 +1556,8 @@ section.top-slider-features .slider-top-features .owl-dots {
     margin-top: 15px;
     font-size: 17px;
     font-weight: 700;
-    color: #1e1e1e
+    color: #1e1e1e;
+    min-height:45px;
 }
 
 .on-grids .car-item .down-content span,
@@ -3932,7 +3948,7 @@ footer .contact_info p {
     max-width: max-content;
 }
 .image_section_above .right-section .pmv_rate {
-    font-size: 33px;
+    font-size: 25px;
     font-weight: 600;
     font-family: 'Bebas Neue', sans-serif;
     letter-spacing: 0px;
@@ -3942,9 +3958,20 @@ footer .contact_info p {
     color: #545252;
     font-weight: 600;
 }
+@media screen and (max-width:1280px){ 
+    .image_section_above .left-section {
+        padding-right: 30px;
+    }
+    .image_section_above .similar-info {
+        grid-column: span 3;
+    }
+}
 
 
 @media screen and (max-width:1199px){
+    .image_section_above .right-section .range{
+        margin: 0 auto;
+    }
     .image_section_above .left-section img.baner_image {       
         max-width: 100px;
     }  
@@ -3968,7 +3995,16 @@ footer .contact_info p {
     }
 }
 
+@media screen and (max-width:992px){
+    .image_section_above .right-section .pmv_rate {
+        font-size: 25px;
+    }
+}
+
 @media screen and (max-width:767px){
+    .image_section_above .right-section .pmv_rate {
+        font-size: 20px;
+    }
     .image_section_above {       
         grid-template-columns: 1fr 5fr;
        
@@ -3978,7 +4014,7 @@ footer .contact_info p {
     }
     .image_section_above {
        
-        max-width: 290px;
+        max-width: 340px;
         margin: 0 auto;
     }
     .single-car .recent-car-content {
@@ -3998,9 +4034,15 @@ footer .contact_info p {
 
 
 
-@media screen and (max-width:575px){
+@media screen and (max-width:575px){ 
+    .image_section_above .left-section {
+        padding-right: 0;
+    }
     .image_section_above .right-section .range span {
         font-size: 14px;
+    }
+    .image_section_above .right-section .pmv_rate {
+        font-size: 17px;
     }
     
 }
@@ -4013,5 +4055,10 @@ footer .contact_info p {
 
 .sub-heading {
     font-size: 19px;
-    margin-bottom: 4px;
+    margin-top: 4px;
+}
+
+
+.car-info .item {
+    white-space: nowrap;
 }

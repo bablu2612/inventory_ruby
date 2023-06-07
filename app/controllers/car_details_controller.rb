@@ -34,9 +34,9 @@ class CarDetailsController < ApplicationController
 
   # POST /car_details or /car_details.json
   def create
-    low= car_detail_params[:mmr].to_i - (car_detail_params[:mmr].to_i*10)/100
-    good=car_detail_params[:mmr].to_i - (car_detail_params[:mmr].to_i*5)/100
-    best=car_detail_params[:mmr].to_i - (car_detail_params[:mmr].to_i*3)/100
+    # low= car_detail_params[:mmr].to_i - (car_detail_params[:mmr].to_i*10)/100
+    # good=car_detail_params[:mmr].to_i - (car_detail_params[:mmr].to_i*5)/100
+    # best=car_detail_params[:mmr].to_i - (car_detail_params[:mmr].to_i*3)/100
 
 
    
@@ -44,7 +44,7 @@ class CarDetailsController < ApplicationController
     
     respond_to do |format|
       if @car_detail.save
-        @car_detail.update(low: low, good: good, best: best)
+        # @car_detail.update(low: low, good: good, best: best)
 
         format.html { redirect_to admin_path, notice: "Car detail was successfully created." }
         format.json { render :show, status: :created, location: @car_detail }
@@ -61,12 +61,12 @@ class CarDetailsController < ApplicationController
     # binding.pry
     
     respond_to do |format|
-      low= car_detail_params[:mmr].to_i - (car_detail_params[:mmr].to_i*10)/100
-      good=car_detail_params[:mmr].to_i - (car_detail_params[:mmr].to_i*5)/100
-      best=car_detail_params[:mmr].to_i - (car_detail_params[:mmr].to_i*3)/100
+      # low= car_detail_params[:mmr].to_i - (car_detail_params[:mmr].to_i*10)/100
+      # good=car_detail_params[:mmr].to_i - (car_detail_params[:mmr].to_i*5)/100
+      # best=car_detail_params[:mmr].to_i - (car_detail_params[:mmr].to_i*3)/100
      
       if @car_detail.update(car_detail_params)
-          @car_detail.update(low: low, good: good, best: best)
+          # @car_detail.update(low: low, good: good, best: best)
         format.html { redirect_to admin_path, notice: "Car detail was successfully updated." }
         format.json { render :show, status: :ok, location: @car_detail }
       else
@@ -94,6 +94,6 @@ class CarDetailsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def car_detail_params
-      params.require(:car_detail).permit(:year,:pointer,:mmr,:vin,:transmission,:drivetrain,:body_type, :make, :model, :trim, :mileage, :fuel_type, :color, :vehicle_condition, :title_status, :zip_code, images: [])
+      params.require(:car_detail).permit(:year,:pointer,:mmr,:low,:best,:vin,:transmission,:drivetrain,:body_type, :make, :model, :trim, :mileage, :fuel_type, :color, :vehicle_condition, :title_status, :zip_code, images: [])
     end
 end
