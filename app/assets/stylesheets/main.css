@@ -1597,9 +1597,10 @@ section.top-slider-features .slider-top-features .owl-dots {
     transition: all 0.3s
 }
 
-.on-grids .car-item .down-content ul li .item:hover,
+/* .on-grids .car-item .down-content ul li .item:hover,
 .recent-cars .car-item .down-content ul li .item:hover {
     background-color: #2959ad
+    
 }
 
 .on-grids .car-item .down-content ul li .item:hover i,
@@ -1610,7 +1611,7 @@ section.top-slider-features .slider-top-features .owl-dots {
 .on-grids .car-item .down-content ul li .item:hover p,
 .recent-cars .car-item .down-content ul li .item:hover p {
     color: #fff
-}
+} */
 
 .on-grids .car-item .down-content ul li .item i,
 .recent-cars .car-item .down-content ul li .item i {
@@ -1748,7 +1749,7 @@ section.top-slider-features .slider-top-features .owl-dots {
     transition: all 0.3s
 }
 
-.on-listing .car-item .down-content ul li .item:hover {
+/* .on-listing .car-item .down-content ul li .item:hover {
     background-color: #2959ad
 }
 
@@ -1758,7 +1759,7 @@ section.top-slider-features .slider-top-features .owl-dots {
 
 .on-listing .car-item .down-content ul li .item:hover p {
     color: #fff
-}
+} */
 
 .on-listing .car-item .down-content ul li .item i {
     font-size: 11px;
@@ -2062,7 +2063,7 @@ section.top-slider-features .slider-top-features .owl-dots {
     transition: all 0.3s
 }
 
-.similar-car .car-item .down-content ul li .item:hover {
+/* .similar-car .car-item .down-content ul li .item:hover {
     background-color: #2959ad
 }
 
@@ -2072,7 +2073,7 @@ section.top-slider-features .slider-top-features .owl-dots {
 
 .similar-car .car-item .down-content ul li .item:hover p {
     color: #fff
-}
+} */
 
 .similar-car .car-item .down-content ul li .item i {
     font-size: 11px;
@@ -3754,7 +3755,7 @@ ul.car-info li i img {
 }
 
 .down-content ul.car-info li:hover i img {
-    filter: invert(0)
+    /* filter: invert(0) */
 }
 a:visited {
     color: #fff !important;
@@ -3837,6 +3838,11 @@ a:visited {
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
+    }
+
+    .sub-heading {
+        font-size: 14px !important;
+       
     }
 }
 
@@ -3986,6 +3992,8 @@ footer .contact_info p {
       
         margin-left: 25px;
     }
+
+    
 }
 
 
@@ -3994,6 +4002,16 @@ footer .contact_info p {
     .image_section_above .right-section .range span {
         font-size: 14px;
     }
+    
 }
 
 
+.content_footer p {
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+.sub-heading {
+    font-size: 19px;
+    margin-bottom: 4px;
+}
