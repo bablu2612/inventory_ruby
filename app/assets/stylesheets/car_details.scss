@@ -1,3 +1,44 @@
 // Place all the styles related to the car_details controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.upload_files_main div#preview-parent {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.upload_files_main div#preview-parent .preview {
+    width: 155px;
+    height: 105px;
+    position: relative;
+    border: 1px dashed #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.upload_files_main div#preview-parent .preview .preview img {
+    width: 150px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.upload_files_main div#preview-parent .preview .remove_image_button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+    display: flex;
+    background: #fff;
+    justify-content: center;
+    align-items: center;
+}
+
+svg#Layer_1 {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+}
