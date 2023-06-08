@@ -101,17 +101,15 @@
 						<div class="row">
               <% @car_details&.each do |car| %>
                 <div class="col-md-4">
+				<a href="/single_car/<%= car.id %>">
                   <div class="car-item">
                     <div class="thumb-content">
-                      <div class="car-banner">
-                        <a href="/single_car">For Rent</a>
-                      </div>
                       <div class="thumb-inner listing_page">
-                        <a href="/single_car/<%= car.id %>"><img src="<%= car.images.attached? ? rails_blob_path(car.images.first, only_path: true) : ""%>" alt=""></a>
+                       <img src="<%= car.images.attached? ? rails_blob_path(car.images.first, only_path: true) : ""%>" alt="">
                       </div>
                     </div>
                     <div class="down-content">
-                      <a href="/single_car/<%= car.id %>"><h4><%= "#{car.year} #{car.make} #{car.model} #{car.trim}" %></h4></a>
+                      <h4><%= "#{car.year} #{car.make} #{car.model} #{car.trim}" %>  <span> <%= car&.asking_price  %> </span></h4>
                       <ul class="car-info">
                         <li><div class="item"><i class=""><img  src="/assets/logo_mileage.png" alt="" /></i><p><%= number_with_delimiter(car.mileage.to_i)%> mile</p></div></li>
                         <li><div class="item"><i class=""><img  src="/assets/logo_vehicle_condition.png" alt="" /></i><p><%= car.vehicle_condition %></p></div></li>
@@ -119,8 +117,10 @@
                        <li><div class="item"><i class=""><img  src="/assets/logo_zip_code.png" alt="" /></i><p><%= car.zip_code %></p></div></li>
 
 				      </ul>
+					  
                     </div>
                   </div>
+				  </a>
                 </div>
               <% end %>
 							

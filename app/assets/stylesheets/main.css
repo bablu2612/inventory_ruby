@@ -1498,10 +1498,10 @@ section.top-slider-features .slider-top-features .owl-dots {
     transition: all 0.3s
 }
 
-.on-grids .car-item:hover,
+/* .on-grids .car-item:hover,
 .recent-cars .car-item:hover {
     border-bottom: 3px solid #2959ad
-}
+} */
 
 .on-grids .car-item .thumb-content,
 .recent-cars .car-item .thumb-content {
@@ -3907,12 +3907,12 @@ footer .contact_info p {
     min-height: 240px;
 }
 
-.listing_page.thumb-inner a img {
+.listing_page.thumb-inner  img {
     height: 240px;
     object-fit: cover;
 }
 
-.listing_page.thumb-inner a {
+.listing_page.thumb-inner {
     display: block;
     height: 100%;
     width: 100%;
