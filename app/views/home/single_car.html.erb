@@ -202,7 +202,7 @@
 					<div class="col-md-6">
 						<div id="single-car" class="slider-pro <%= @car_detail&.images&.length === 1 ? 'oneImageSlide' : '' %>">
 							<div class="sp-slides">
-                              <% @car_detail&.images&.each do |image|%>
+                              <% @car_detail&.images&.order(:id)&.each do |image|%>
 									<div class="sp-slide">
 										<img class="sp-image" src="<%= rails_blob_path(image, only_path: true) %>" alt="" />
 									</div>
@@ -212,7 +212,7 @@
 
 							<% if @car_detail&.images&.length > 1 %>
 								<div class="sp-thumbnails">
-									<% @car_detail&.images&.each do |image|%>
+									<% @car_detail&.images&.order(:id)&.each do |image|%>
 										<img class="sp-thumbnail" src="<%= rails_blob_path(image, only_path: true) %>" alt="" />
 									<% end %>
 								</div>
@@ -375,7 +375,6 @@
 			</div>
 		</div>
 	</footer>
-
 
 	<script>
 		function showPriceInq(){

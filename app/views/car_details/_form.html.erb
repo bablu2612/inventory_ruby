@@ -292,6 +292,7 @@
 <script>
    var sortedFiles = [];
    $("form").submit(function(e){
+      updateOrder();
       e.preventDefault();
       var formData = new FormData($("form")[0]);
       let images = {}
@@ -379,7 +380,6 @@
 
    input.addEventListener("change", () => {
    let files = input.files;
-
    for (let i = 0; i < files.length; i++) {
       // A new upload must not replace images but be added
       dataTransfer.items.add(files[i]);
@@ -399,7 +399,7 @@
       deleteButton.setAttribute("onclick", "deleteImage(this)");
       deleteButton.innerText = "Delete";
       orderInput.type = "hidden";
-      orderInput.name = "images_order[" + files[i].name + "]";
+      orderInput.name = "images_order[" + files[i].lastModified + "]";
 
       preview.appendChild(previewImage);
       preview.appendChild(deleteButton);
@@ -413,14 +413,13 @@
 
    // Update order values for all images
    updateOrder();
+   input.files = dataTransfer.files;
       // Finally update input files that will be sumbitted
-      input.files = dataTransfer.files;
    });
 
    const updateOrder = () => {
       let orderInputs = document.querySelectorAll('input[name^="images_order"]')
       let deleteButtons = document.querySelectorAll('button[data-index]')
-
       sortedFiles = []
       for (let i = 0; i < orderInputs.length; i++) {
          orderInputs[i].value = [i]
@@ -429,8 +428,10 @@
          deleteButtons[i].innerHTML= `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" width="122.881px" height="122.88px" viewBox="0 0 122.881 122.88" enable-background="new 0 0 122.881 122.88" xml:space="preserve"><g><path fill-rule="evenodd" clip-rule="evenodd" d="M61.44,0c33.933,0,61.441,27.507,61.441,61.439 c0,33.933-27.508,61.44-61.441,61.44C27.508,122.88,0,95.372,0,61.439C0,27.507,27.508,0,61.44,0L61.44,0z M81.719,36.226 c1.363-1.363,3.572-1.363,4.936,0c1.363,1.363,1.363,3.573,0,4.936L66.375,61.439l20.279,20.278c1.363,1.363,1.363,3.573,0,4.937 c-1.363,1.362-3.572,1.362-4.936,0L61.44,66.376L41.162,86.654c-1.362,1.362-3.573,1.362-4.936,0c-1.363-1.363-1.363-3.573,0-4.937 l20.278-20.278L36.226,41.162c-1.363-1.363-1.363-3.573,0-4.936c1.363-1.363,3.573-1.363,4.936,0L61.44,56.504L81.719,36.226 L81.719,36.226z"/></g></svg>`
       
          //custom
-         let indexField = $("input[name='images_order["+input.files[i]?.name+"]']");
+         let indexField = $("input[name='images_order["+input.files[i]?.lastModified+"]']");
+         
          sortedFiles[indexField?.val()] = input.files[i]
+         console.log("sortedfiles", sortedFiles)
       }     
 
    }
@@ -457,6 +458,60 @@
       updateOrder();
    };
 
+
+   <% if @car_detail.images.attached? %>
+      let toRenderImages = []
+      let url;
+      Promise.all([
+      <% @car_detail.images.order(:id).each_with_index do |image, i| %>
+         fetch('<%= rails_blob_path(image, only_path: true) %>')
+          .then(response => response.blob())
+          .then(blob => {
+            var file = new File([blob], '<%= image.filename %>');
+            dataTransfer.items.add(file);
+            toRenderImages[<%= i %>] = file;
+          }),
+      <% end %>
+       ]).then(() => {
+      defaultImageRender();
+      input.files = dataTransfer.files
+    });
+   
+  <% end %>
+
+   function defaultImageRender(){
+      dataTransfer.clearData();
+      toRenderImages.map((file,i )=>{
+         // Generate previews using FileReader
+         let reader, preview, previewImage;
+         reader = new FileReader();
+         preview = document.createElement("div");
+         previewImage = document.createElement("img");
+         deleteButton = document.createElement("button");
+         orderInput = document.createElement("input");
+
+         preview.classList.add("preview");
+         document.querySelector("#preview-parent").appendChild(preview);
+         deleteButton.setAttribute("data-index", i);
+         deleteButton.setAttribute("onclick", "deleteImage(this)");
+         deleteButton.classList = "remove_image_button"
+         deleteButton.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" width="122.881px" height="122.88px" viewBox="0 0 122.881 122.88" enable-background="new 0 0 122.881 122.88" xml:space="preserve"><g><path fill-rule="evenodd" clip-rule="evenodd" d="M61.44,0c33.933,0,61.441,27.507,61.441,61.439 c0,33.933-27.508,61.44-61.441,61.44C27.508,122.88,0,95.372,0,61.439C0,27.507,27.508,0,61.44,0L61.44,0z M81.719,36.226 c1.363-1.363,3.572-1.363,4.936,0c1.363,1.363,1.363,3.573,0,4.936L66.375,61.439l20.279,20.278c1.363,1.363,1.363,3.573,0,4.937 c-1.363,1.362-3.572,1.362-4.936,0L61.44,66.376L41.162,86.654c-1.362,1.362-3.573,1.362-4.936,0c-1.363-1.363-1.363-3.573,0-4.937 l20.278-20.278L36.226,41.162c-1.363-1.363-1.363-3.573,0-4.936c1.363-1.363,3.573-1.363,4.936,0L61.44,56.504L81.719,36.226 L81.719,36.226z"/></g></svg>`;
+         orderInput.type = "hidden";
+         orderInput.name = "images_order[" + file.lastModified + "]";
+
+         preview.appendChild(previewImage);
+         preview.appendChild(deleteButton);
+         preview.appendChild(orderInput);
+
+         reader.readAsDataURL(file);
+         reader.onloadend = () => {
+            previewImage.src = reader.result;
+         };
+         dataTransfer.items.add(file);
+      })
+      sortedFiles = toRenderImages
+   }
+   
    // I make the images sortable by means of SortableJS
    const el = document.getElementById("preview-parent");
    new Sortable(el, {
