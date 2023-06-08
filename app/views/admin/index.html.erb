@@ -63,6 +63,8 @@
 
 
 
+
+
 <div class="px-4 sm:px-6 lg:px-8 ">
   <div class="sm:flex sm:items-center header_admin">
     <div class="sm:flex-auto">
@@ -133,7 +135,16 @@
                 <i class="fa-solid fa-trash"></i>
               <% end %>
 
+                <div class="swith-button bg-white ml-2">
+                    <label class="relative inline-flex items-center cursor-pointer">
+                      <input type="checkbox" value="<%= car.id %>" class=" show_only_asking_price sr-only peer " <%= car.sold_out ? "checked" : '' %>     / >
+                      <div class="w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+                      <span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300 hidden">Checked toggle</span>
+                    </label>
+                </div>
                </div>
+
+
               </td>
               </tr>
 
@@ -151,3 +162,30 @@
 </div>
 </div>
 
+
+<script>
+
+
+$(".show_only_asking_price").click(function () {
+  $('.custom_notification').addClass('hidden')
+
+
+    let data = {id: $(this).val(),sold_out: $(this).is(':checked') }
+
+    $.ajax({
+        type: "post",
+        data: data,
+        url: "show_only_sold_out",
+        success: function(data) { 
+            if(data.status === 200){
+               $('.custom_notification').removeClass('hidden')
+            }else{
+
+            }
+        }
+    })
+    
+})
+
+
+</script>

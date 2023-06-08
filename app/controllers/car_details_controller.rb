@@ -21,6 +21,19 @@ class CarDetailsController < ApplicationController
 
   end
 
+
+
+def show_only_sold_out
+
+  car = CarDetail.find(params[:id])
+  car.update(sold_out: params[:sold_out])
+  # binding.pry
+    render json: {data: car ,status: 200 ,message: "Record updated successfully"}
+
+end
+
+
+
   # GET /car_details/1 or /car_details/1.json
   def show
   end
