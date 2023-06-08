@@ -9,6 +9,8 @@ class CarDetailsController < ApplicationController
 
   def send_offer_email
     @car = CarDetail.find(params[:id])
+    @car.asking_price= params[:asking_price]
+    @car.save!
     OfferMailer.send_offer_email(@car, params).deliver_now
     respond_to do |format|
         format.html { redirect_to "/single_car/#{@car.id}", notice: "Email is successfully sent." }
@@ -18,6 +20,19 @@ class CarDetailsController < ApplicationController
 
 
   end
+
+
+
+def show_only_sold_out
+
+  car = CarDetail.find(params[:id])
+  car.update(sold_out: params[:sold_out])
+  # binding.pry
+    render json: {data: car ,status: 200 ,message: "Record updated successfully"}
+
+end
+
+
 
   # GET /car_details/1 or /car_details/1.json
   def show

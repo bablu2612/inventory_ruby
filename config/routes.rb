@@ -8,5 +8,8 @@ Rails.application.routes.draw do
 
   get '/admin', to: "admin#index"
 
+
+  post "/show_only_sold_out", to: "car_details#show_only_sold_out"
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
