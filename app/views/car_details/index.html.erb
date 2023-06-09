@@ -110,6 +110,7 @@
                       </div>
                     </div>
                     <div class="down-content">
+					<button class="type_deal <%= car&.deal_type != nil ? car&.deal_type : 'hidden_class'  %>"> <%= car&.deal_type == "new" ? "NEW" : car&.deal_type == "hot" ? "HOT DEAL" :car&.deal_type == "drop" ? "Drop Price" : '' %> </button> 
                       <h4 class="title_listing"><div class="heading"><%= "#{car.year} #{car.make} #{car.model} #{car.trim}" %> 	</div> <span class="price-data"> <%= car&.asking_price != nil ? " $#{number_with_delimiter(car&.asking_price&.to_i)}" : ''  %> </span></h4>
                       <ul class="car-info">
                         <li><div class="item"><i class=""><img  src="/assets/logo_mileage.png" alt="" /></i><p><%= number_with_delimiter(car.mileage.to_i)%> mile</p></div></li>

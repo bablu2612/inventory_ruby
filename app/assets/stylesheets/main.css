@@ -3918,23 +3918,21 @@ footer .contact_info p {
     width: 100%;
 }
 
-.image_section_above {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-}
+
 .image_section_above {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: repeat(2, 1fr);
     align-items: center;
     gap: 3rem 0;
     background: #fff;
+    text-align: center;
+    gap: 45px;
 }
 .image_section_above .right-section .range {
     background: #f2f2f2;
     padding: 15px;
     border-radius: 10px;
-    max-width: max-content;
+    max-width: 100%;
     font-size: 35px;
     font-family: 'Bebas Neue', sans-serif;
 }
@@ -3944,14 +3942,15 @@ footer .contact_info p {
     max-width: 150px;
 }
 .image_section_above .right-section {
-    text-align: center;
-    max-width: max-content;
+    width: 100%;
+    max-width: 100%;
 }
 .image_section_above .right-section .pmv_rate {
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 600;
     font-family: 'Bebas Neue', sans-serif;
     letter-spacing: 0px;
+    margin-bottom: 8px;
 }
 .image_section_above .right-section .range span {
     font-size: 30px;
@@ -4102,3 +4101,84 @@ footer .contact_info p {
 .title_listing{
     justify-content: space-between;
 }
+.hidden_class{
+    display: none;
+}
+
+.checkbox-group .checkBoxblock {
+    flex-wrap: wrap;
+}
+.checkbox-group .checkBoxblock button {
+    flex: 100%;
+    text-align: left;    
+    padding: 8px;
+    text-align: center;
+    border-radius: 6px;
+    color: #fff;
+    font-weight: 600;
+}
+.checkbox-group .checkBoxblock  input {
+    width: 22px;
+    height: 22px;
+}
+.checkbox-group .checkBoxblock label {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.checkbox-group .checkBoxblock {
+    gap: 1rem 0;
+    justify-content: center;
+    flex: 0 0 33%;
+}
+ button.hot_button {
+    background: #e1a510;
+}
+button.drop_button {
+    background: green;
+}
+
+
+.new_button{
+    background: #1a33bf;
+}
+
+.price_wraper {
+    background: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+}
+.price_wraper h2 {
+    font-weight: 700;
+}
+
+.type_deal{
+    border: 0;
+    text-align: left;
+    padding: 8px;
+    text-align: center;
+    border-radius: 6px;
+    color: #fff;
+    font-weight: 600;
+}
+.hot{
+    background: #e1a510;
+}
+.new{
+    background: #1a33bf;
+}
+.drop{
+    background: green;
+}
+.top-section {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+/* .down-content button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+} */

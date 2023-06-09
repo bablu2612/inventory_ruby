@@ -109,6 +109,6 @@ end
 
     # Only allow a list of trusted parameters through.
     def car_detail_params
-      params.require(:car_detail).permit(:year,:pointer,:mmr,:low,:best,:vin,:transmission,:drivetrain,:body_type, :make, :model, :trim, :mileage, :fuel_type, :color, :vehicle_condition, :title_status, :zip_code, images: [])
+      params.require(:car_detail).permit(:year,:pointer,:mmr,:low,:best,:market_min_price,:market_max_price,:deal_type,:vin,:transmission,:drivetrain,:body_type, :make, :model, :trim, :mileage, :fuel_type, :color, :vehicle_condition, :title_status, :zip_code, images: [])
     end
 end

@@ -10,8 +10,31 @@
    <div class="form_main_div w-full max-w-full mt-[40px]">
       <h6 class="font-black">Please fill out the following information:</h6>
       <form class="vehicle_appraisel_form mt-[10px]">
+
+          <%= form.hidden_field :deal_type, id: "deal_type" %>
+
+
+            <div class="d-flex form_group checkbox-group mb-4 mt-[30px] max-w-full w-full gap-5 ">
+               <div class="flex items-center  new-checkbox checkBoxblock">
+                  <button class="new_button"> New </button>
+                  <input <%= car_detail&.deal_type == "new" ? "checked" : '' %> id="new" type="checkbox" value="new" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                  <label for="new" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">New</label>
+               </div>
+               <div class="flex items-center hot-checkbox checkBoxblock" >
+                  <button class="hot_button"> Hot Deal </button>
+                  <input <%= car_detail&.deal_type == "hot" ? "checked" : '' %> id="hot" type="checkbox" value="hot" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                  <label for="hot-checkbox" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Hot Deal</label>
+               </div>
+               <div class="flex items-center drop-checkbox checkBoxblock">
+                  <button class="drop_button"> Drop Price </button>
+                  <input <%= car_detail&.deal_type == "drop" ? "checked" : '' %> id="drop" type="checkbox" value="drop" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                  <label for="drop" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Drop Price</label>
+               </div>
+            </div>
         
             <div class="form_group mb-4 mt-[11px] max-w-full w-full">
+
+
                <label class="text-slate-600 font-bold">
                Year<span class="text-red-500">*</span>
                </label>
@@ -134,26 +157,54 @@
 
             
 
-            <div class="form_group mb-4 mt-[11px] max-w-full w-full">
-               <label class="text-slate-600 font-bold">
-               Min<span class="text-red-500">*</span>
-               </label>
-               <%= form.text_field :low, placeholder: "Enter min price", class: "block rounded-md border-0 outline-none px-3 py-2 mt-2 w-full" %>
-               <% if car_detail.errors.has_key?(:low) %>
-               <div class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">Min is required</div>
-               <% end %>
+            <div class="price_wraper market_value">
+               <h2>Post Market Value </h2>
+               <div class="form_group mb-4 mt-[11px] max-w-full w-full">
+                  <label class="text-slate-600 font-bold">
+                  Min<span class="text-red-500">*</span>
+                  </label>
+                  <%= form.text_field :market_min_price, placeholder: "Enter min price", class: "block rounded-md border-0 outline-none px-3 py-2 mt-2 w-full" %>
+                  <% if car_detail.errors.has_key?(:market_max_price) %>
+                  <div class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">Min is required</div>
+                  <% end %>
+                </div>
+
+               <div class="form_group mb-4 mt-[11px] max-w-full w-full">
+                  <label class="text-slate-600 font-bold">
+                  Max<span class="text-red-500">*</span>
+                  </label>
+                  <%= form.text_field :market_max_price, placeholder: "Enter max price", class: "block rounded-md border-0 outline-none px-3 py-2 mt-2 w-full" %>
+                  <% if car_detail.errors.has_key?(:market_max_price) %>
+                  <div class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">Max is required</div>
+                  <% end %>
+               </div>
+
             </div>
 
-            <div class="form_group mb-4 mt-[11px] max-w-full w-full">
-               <label class="text-slate-600 font-bold">
-               Max<span class="text-red-500">*</span>
-               </label>
-               <%= form.text_field :best, placeholder: "Enter max price", class: "block rounded-md border-0 outline-none px-3 py-2 mt-2 w-full" %>
-               <% if car_detail.errors.has_key?(:best) %>
-               <div class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">Max is required</div>
-               <% end %>
+
+            <div class="price_wraper price_range">
+               <h2>Price Range </h2>
+               <div class="form_group mb-4 mt-[11px] max-w-full w-full">
+                  <label class="text-slate-600 font-bold">
+                  Min<span class="text-red-500">*</span>
+                  </label>
+                  <%= form.text_field :low, placeholder: "Enter min price", class: "block rounded-md border-0 outline-none px-3 py-2 mt-2 w-full" %>
+                  <% if car_detail.errors.has_key?(:low) %>
+                  <div class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">Min is required</div>
+                  <% end %>
+               </div>
+
+               <div class="form_group mb-4 mt-[11px] max-w-full w-full">
+                  <label class="text-slate-600 font-bold">
+                  Max<span class="text-red-500">*</span>
+                  </label>
+                  <%= form.text_field :best, placeholder: "Enter max price", class: "block rounded-md border-0 outline-none px-3 py-2 mt-2 w-full" %>
+                  <% if car_detail.errors.has_key?(:best) %>
+                  <div class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">Max is required</div>
+                  <% end %>
+               </div>
             </div>
-         
+
 
 
 
@@ -264,6 +315,28 @@
    } 
 </style>
 <script>
+
+
+$("input:checkbox").on('click', function() {
+  // in the handler, 'this' refers to the box clicked on
+  var $box = $(this);
+
+$('#deal_type').val($box.attr('id'))
+  if ($box.is(":checked")) {
+    // the name of the box is retrieved using the .attr() method
+    // as it is assumed and expected to be immutable
+    var group = "input:checkbox[name='" + $box.attr("name") + "']";
+    // the checked state of the group/box on the other hand will change
+    // and the current value is retrieved using .prop() method
+    $(group).prop("checked", false);
+    $box.prop("checked", true);
+  } else {
+    $box.prop("checked", false);
+  }
+});
+
+
+
     function carAttchmentModal() {
         document.getElementById('car_attachement_modal').classList.toggle('hidden')
     }

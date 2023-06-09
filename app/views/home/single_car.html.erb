@@ -221,7 +221,10 @@
 					</div>
 					<div class="col-md-6">
 						<div class="car-details">
+						<div class="top-section">
 							<h4><%= "#{@car_detail.year} #{@car_detail.make} #{@car_detail.model} #{@car_detail.trim}" %></h4>
+							<button class="type_deal <%= @car_detail&.deal_type != nil ? @car_detail&.deal_type : 'hidden_class'  %>"> <%= @car_detail&.deal_type == "new" ? "NEW" : @car_detail&.deal_type == "hot" ? "HOT DEAL" : @car_detail&.deal_type == "drop" ? "Drop Price" : '' %> </button> 
+						</div>
 							<div class="container">
 								<div class="row">
 									<ul class="car-info col-md-6">
@@ -257,18 +260,26 @@
 								</div>
 							</div>
 							<div class="image_section_above">
-									<div class="left-section">
-												<img class="baner_image" src="/assets/meter_chart.jpeg" alt="" />
-									</div>
+									
 
-									<div class="right-section">
-                                     <div class="pmv_rate"> Post Market Value </div>
-									 
-									 <div class="range"> <span class="price"> $<%= number_with_delimiter(@car_detail&.low.to_i) %> </span> ~ <span class="price"> $ <%= number_with_delimiter(@car_detail&.best.to_i) %> </span>
-									
-									
+									<div class="post-market-val right-section">
+										<div class="pmv_rate"> 
+											Post Market Value <span>&#174;</span>							
+
+										</div>
+										<div class="range"> 
+											<span class="price"> $<%= number_with_delimiter(@car_detail&.low.to_i) %> </span>
+											~ 
+											<span class="price"> $ <%= number_with_delimiter(@car_detail&.best.to_i) %> </span>
+										</div>
+									 </div>
+
+
+									<div class="price_range-val right-section">
+										<div class="pmv_rate"> Pre-Negotiated Price Range</div>
+										
+										<div class="range"> <span class="price"> $<%= number_with_delimiter(@car_detail&.low.to_i) %> </span> ~ <span class="price"> $ <%= number_with_delimiter(@car_detail&.best.to_i) %> </span></div>
 									</div>
-									<div class="sub-heading"> Pre-negotiated price range </div>
 
 							</div>
 							<div class="similar-info">
