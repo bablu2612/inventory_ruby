@@ -17,17 +17,17 @@
             <div class="d-flex form_group checkbox-group mb-4 mt-[30px] max-w-full w-full gap-5 ">
                <div class="flex items-center  new-checkbox checkBoxblock">
                   <button class="new_button"> New </button>
-                  <input <%= car_detail&.deal_type == "new" ? "checked" : '' %> id="new" type="checkbox" value="new" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                  <input <%= car_detail&.deal_type == "new" ? "checked" : '' %> id="new" type="checkbox" value="new" class="car_detail_deal_check w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                   <label for="new" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">New</label>
                </div>
                <div class="flex items-center hot-checkbox checkBoxblock" >
                   <button class="hot_button"> Hot Deal </button>
-                  <input <%= car_detail&.deal_type == "hot" ? "checked" : '' %> id="hot" type="checkbox" value="hot" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                  <input <%= car_detail&.deal_type == "hot" ? "checked" : '' %> id="hot" type="checkbox" value="hot" class="car_detail_deal_check w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                   <label for="hot-checkbox" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Hot Deal</label>
                </div>
                <div class="flex items-center drop-checkbox checkBoxblock">
                   <button class="drop_button"> Drop Price </button>
-                  <input <%= car_detail&.deal_type == "drop" ? "checked" : '' %> id="drop" type="checkbox" value="drop" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                  <input <%= car_detail&.deal_type == "drop" ? "checked" : '' %> id="drop" type="checkbox" value="drop" class="car_detail_deal_check w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                   <label for="drop" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Drop Price</label>
                </div>
             </div>
@@ -244,6 +244,17 @@
                <div class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">Vehicle Condition is required</div>
                <% end %>
             </div>
+
+            <div class="form_group mb-4 mt-[11px] max-w-full w-full">
+               <label class="text-slate-600 font-bold">
+                  Asking price<span class="text-red-500">*</span>
+               </label>
+               <%= form.text_field :asking_price, placeholder: "Enter Asking Price", class: "block rounded-md border-0 outline-none px-3 py-2 mt-2 w-full" %>
+               <% if car_detail.errors.has_key?(:asking_price) %>
+                  <div class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">Asking price is required</div>
+               <% end %>
+            </div>
+
             <div class="form_group mb-4 mt-[11px] max-w-full w-full">
                <label class="text-slate-600 font-bold">
                 Title Status <span class="text-red-500">*</span>
@@ -317,23 +328,17 @@
 <script>
 
 
-$("input:checkbox").on('click', function() {
-  // in the handler, 'this' refers to the box clicked on
-  var $box = $(this);
+   $(".car_detail_deal_check").on('click', function() {
+      var $box = $(this);
 
-$('#deal_type').val($box.attr('id'))
-  if ($box.is(":checked")) {
-    // the name of the box is retrieved using the .attr() method
-    // as it is assumed and expected to be immutable
-    var group = "input:checkbox[name='" + $box.attr("name") + "']";
-    // the checked state of the group/box on the other hand will change
-    // and the current value is retrieved using .prop() method
-    $(group).prop("checked", false);
-    $box.prop("checked", true);
-  } else {
-    $box.prop("checked", false);
-  }
-});
+      $('#deal_type').val($box.attr('id'))
+      if ($box.is(":checked")) {
+         $(".car_detail_deal_check").prop("checked", false);
+         $box.prop("checked", true);
+      } else {
+         $box.prop("checked", false);
+      }
+   });
 
 
 
