@@ -1518,6 +1518,7 @@ section.top-slider-features .slider-top-features .owl-dots {
 }
 
 .on-grids .car-item .thumb-content .car-banner a,
+.on-grids .car-item .thumb-content .car-banner button,
 .recent-cars .car-item .thumb-content .car-banner a {
     background-color: #2959ad;
     border-radius: 3px;
@@ -2002,7 +2003,8 @@ section.top-slider-features .slider-top-features .owl-dots {
     margin-right: 26px
 }
 
-.similar-car .car-item .thumb-content .car-banner a {
+.similar-car .car-item .thumb-content .car-banner a,
+.similar-car .car-item .thumb-content .car-banner button {
     background-color: #2959ad;
     border-radius: 3px;
     color: #fff;
@@ -3698,10 +3700,6 @@ div#cssmenu {
     margin-top: 100px;
 }
 
-.car-banner {
-    display: none;
-}
-
 .customnutton {
     background: blue;
     color: #fff;
@@ -4184,13 +4182,13 @@ button.drop_button {
     font-weight: 600;
 }
 .hot{
-    background: #e1a510;
+    background-color: #e1a510 !important;
 }
 .new{
-    background: #1a33bf;
+    background-color: #1a33bf !important;
 }
 .drop{
-    background: green;
+    background-color: green !important;
 }
 .top-section {
     display: flex;
@@ -4208,3 +4206,9 @@ button.drop_button {
 /* .checkbox-group {
     display: none !important;
 } */
+
+.on-grids .car-item .thumb-content .car-banner button {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+}
