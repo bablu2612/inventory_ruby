@@ -3964,6 +3964,14 @@ footer .contact_info p {
     .image_section_above .similar-info {
         grid-column: span 3;
     }
+
+    .image_section_above .right-section .range {
+        font-size: 15px;
+    }
+
+    .image_section_above .right-section .pmv_rate {
+        font-size: 15px !important;
+    }
 }
 
 
@@ -4026,6 +4034,18 @@ footer .contact_info p {
     .image_section_above .right-section {
       
         margin-left: 25px;
+    }
+
+    .car-details .image_section_above .right-section {      
+        margin: 0px auto;
+    }
+
+    .car-details  .image_section_above {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 30px;
+        justify-content: center;
+        padding: 0!important;
     }
 
     
