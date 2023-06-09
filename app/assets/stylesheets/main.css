@@ -4182,7 +4182,9 @@ button.drop_button {
     top: 15px;
     right: 15px;
 } */
-
+.similar-info {
+    margin-top: 16px;
+}
 .checkbox-group {
     display: none !important;
 }
