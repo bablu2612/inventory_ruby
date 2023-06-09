@@ -268,9 +268,9 @@
 
 										</div>
 										<div class="range"> 
-											<span class="price"> $<%= number_with_delimiter(@car_detail&.low.to_i) %> </span>
+											<span class="price"> $<%= number_with_delimiter(@car_detail&.market_min_price.to_i) %> </span>
 											~ 
-											<span class="price"> $ <%= number_with_delimiter(@car_detail&.best.to_i) %> </span>
+											<span class="price"> $<%= number_with_delimiter(@car_detail&.market_max_price.to_i) %> </span>
 										</div>
 									 </div>
 
