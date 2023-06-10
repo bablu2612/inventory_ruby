@@ -4,7 +4,7 @@ class OfferMailer < ApplicationMailer
         @car = car
         @params = params
 
-        emails = ['roy@inpublic.com','kevin@inpublic.com','james@inpublic.com','ivan@postyourcars.com']
+        emails = ['roy@inpublic.com','kevin@inpublic.com','james@inpublic.com']
     #    emails = ['bk147411@gmail.com','bablu@csgroupchd.com']
 
        mail(to: emails, subject: "New Dealer Lead:#{@params[:dealership_name]}")

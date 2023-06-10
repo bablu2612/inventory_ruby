@@ -102,6 +102,8 @@
 					</ul>
 				</div>
 			</div>
+						<div class="sub-heading-header"><h3 class="subheading">Pre-Negotiated Leads</h3></div>
+
 		</div>
 	</header>
 
@@ -221,6 +223,10 @@
 										<li class="vin_number"><i class="">VIN#</i>
 											<p><%= @car_detail.vin %></p>
 										</li>
+
+										<li><i class="fa-solid fa-user fa-2xl"></i>
+											<p><%= @car_detail.seller_name %></p>
+										</li>
 									</ul>
 									<ul class="car-info col-md-6">
 										
@@ -235,6 +241,18 @@
 										<li><i class=""><img src="/assets/logo_zip_code.png" alt="" /></i>
 											<p><%= @car_detail.zip_code %></p>
 										</li>
+										<li><i class=""></i>
+											<p></p>
+										</li>
+										<li><i class=""></i>
+											<div class="similar-info">
+								<div class="primary-button">
+									<a class="text-color-white text-white" onclick="showPriceInq()">Contact Seller</a>
+								</div>
+							</div>
+										</li>
+
+										
 									</ul>
 								</div>
 							</div>
@@ -262,11 +280,7 @@
 									</div>
 
 							</div>
-							<div class="similar-info">
-								<div class="primary-button">
-									<a class="text-color-white text-white" onclick="showPriceInq()">Contact Seller</a>
-								</div>
-							</div>
+							
 						</div>
 					</div>
 				</div>

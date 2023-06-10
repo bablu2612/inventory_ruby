@@ -14,7 +14,7 @@
           <%= form.hidden_field :deal_type, id: "deal_type" %>
 
 
-            <div class="d-flex form_group checkbox-group mb-4 mt-[30px] max-w-full w-full gap-5 ">
+            <div class="d-flex form_group checkbox-group mb-4 mt-[30px] max-w-full w-full gap-5 hiden_class">
                <div class="flex items-center  new-checkbox checkBoxblock">
                   <button class="new_button"> New </button>
                   <input <%= car_detail&.deal_type == "new" ? "checked" : '' %> id="new" type="checkbox" value="new" class="car_detail_deal_check w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
@@ -76,6 +76,18 @@
                <div class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">Model is required</div>
                <% end %>
             </div>
+
+            <div class="form_group mb-4 mt-[11px] max-w-full w-full">
+               <label class="text-slate-600 font-bold">
+               Seller Name<span class="text-red-500">*</span>
+               </label>
+               <%= form.text_field :seller_name,placeholder: "Enter Seller Name", class: "block rounded-md border-0 outline-none px-3 py-2 mt-2 w-full" %>
+               <% if car_detail.errors.has_key?(:seller_name) %>
+               <div class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">Seller Name is required</div>
+               <% end %>
+            </div>
+
+            
 
             <div class="form_group mb-4 mt-[11px] max-w-full w-full hidden">
                <label class="text-slate-600 font-bold">
@@ -245,7 +257,7 @@
                <% end %>
             </div>
 
-            <div class="form_group mb-4 mt-[11px] max-w-full w-full">
+            <div class="form_group mb-4 mt-[11px] max-w-full w-full hidden">
                <label class="text-slate-600 font-bold">
                   Asking price<span class="text-red-500">*</span>
                </label>

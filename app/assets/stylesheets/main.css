@@ -3829,6 +3829,14 @@ a:visited {
     }
 }
 @media (max-width: 767px) {
+    .sub-heading-header {
+        margin-left: 39px !important;
+        margin-top: 0px !important;
+    }    
+    
+    .subheading {
+        font-size: 16px !important;
+    }
     .single-car .recent-car-content {
         margin-bottom: 20px;
     }
@@ -4007,6 +4015,8 @@ footer .contact_info p {
 }
 
 @media screen and (max-width:767px){
+
+    
     .image_section_above .right-section .pmv_rate {
         font-size: 20px;
     }
@@ -4061,6 +4071,8 @@ footer .contact_info p {
     .image_section_above .right-section .pmv_rate {
         font-size: 17px;
     }
+
+   
     
 }
 
@@ -4195,20 +4207,27 @@ button.drop_button {
     gap: 12px;
     margin-bottom: 12px;
 }
-/* .down-content button {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-} */
-.similar-info {
-    margin-top: 16px;
-}
-/* .checkbox-group {
-    display: none !important;
-} */
+
 
 .on-grids .car-item .thumb-content .car-banner button {
     width: fit-content;
     display: flex;
     align-items: center;
+}
+
+
+.car-banner,.hiden_class,.type_deal{
+    display: none !important;
+
+}
+.price-data{
+    display: none !important;
+}
+.sub-heading-header
+    {
+        margin-left: 281px;
+        margin-top: 13px;
+    }
+.subheading{
+font-size: 19px;
 }
