@@ -789,6 +789,12 @@ html body .asking_price_modal_body_container .modal_body_footer {
         -webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
         box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15)
     }
+
+    .single-car a.contact_seller_button{
+        font-size: 12px;
+        padding: 10px 8px;
+        margin-left: 5px;
+    }
 }
 
 @media (max-width:767px) {
