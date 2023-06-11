@@ -3965,7 +3965,7 @@ footer .contact_info p {
     margin-bottom: 8px;
 }
 .image_section_above .right-section .range span {
-    font-size: 30px;
+    font-size: 20px;
     color: #545252;
     font-weight: 600;
 }
@@ -4236,4 +4236,13 @@ button.drop_button {
     }
 .subheading{
 font-size: 19px;
+}
+
+.single_car_user_icon{
+    font-size: 18px !important;
+}
+
+.single-car .car-details ul.car-info li.vin_number i{
+    font-size: 13px;
+
 }
