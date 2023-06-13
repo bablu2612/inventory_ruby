@@ -795,6 +795,7 @@ html body .asking_price_modal_body_container .modal_body_footer {
         padding: 10px 8px;
         margin-left: 5px;
     }
+   
 }
 
 @media (max-width:767px) {
@@ -830,11 +831,13 @@ only screen and (min-resolution:192dpi) and (max-width:1024px) {
 
     .site-header .logo {
         float: left;
-        padding: 15px 0px 44px 0px;
+        padding: 0px 0px 44px 0px;
         display: inline-block;
         background-image: url(/assets/logo_responsive_black.png)
     }
-
+    .sub_heading_header1.col-md-12 {
+        padding-left: 41px;
+    }
     .site-header #cssmenu.align-center>ul {
         text-align: left
     }
@@ -3835,10 +3838,20 @@ a:visited {
     }
 }
 @media (max-width: 767px) {
-    .sub-heading-header {
+    /* .sub-heading-header {
         margin-left: 39px !important;
         margin-top: 0px !important;
-    }    
+    }  */
+    .sub-heading-header {
+        margin-left: 158px !important;
+        margin-top: 0px !important;
+    }  
+    .site-header .logo {
+        padding: 0px 0px 44px 0px !important;
+    } 
+    .sub_heading_header1 {
+        margin-left: 27px;
+    }
     
     .subheading {
         font-size: 16px !important;
@@ -4231,7 +4244,7 @@ button.drop_button {
 }
 .sub-heading-header
     {
-        margin-left: 346px;
+        margin-left: 275px;
         margin-top: 13px;
     }
 .subheading{
@@ -4245,4 +4258,10 @@ font-size: 19px;
 .single-car .car-details ul.car-info li.vin_number i{
     font-size: 13px;
 
+}
+.sub_heading_header1.col-md-12 {
+    margin: 10px 0 0;
+}
+.scrolled-header .sub_heading_header1 {
+    padding-left: 41px;
 }
