@@ -193,8 +193,12 @@
 											<p><%= @car_detail.views %></p>
 										</li>
 
-										<li><i class="fa-solid fa-user fa-2xl single_car_user_icon"></i>
-											<p><%= @car_detail.seller_name %></p>
+										<li><i class="" style="display:none"></i>
+											<div class="similar-info">
+												<div class="primary-button">
+													<a class="contact_seller_button text-color-white text-white" onclick="showPriceInqoffer()">Send Offer</a>
+												</div>
+							              </div>
 										</li>
 										
 
@@ -217,17 +221,15 @@
 											</i>
 											<p></p>
 										</li>
-										<li>
-											<i class="">
-											</i>
-											<p></p>
+										<li><i class="fa-solid fa-user fa-2xl single_car_user_icon"></i>
+											<p><%= @car_detail.seller_name %></p>
 										</li>
 										<li><i class="" style="display:none"></i>
 											<div class="similar-info">
-								<div class="primary-button">
-									<a class="contact_seller_button text-color-white text-white" onclick="showPriceInq()">Contact Seller</a>
-								</div>
-							</div>
+												<div class="primary-button">
+													<a class="contact_seller_button text-color-white text-white" onclick="showPriceInq()">Contact Seller</a>
+												</div>
+							              </div>
 										</li>
 
 										
@@ -360,16 +362,84 @@
 				</div>
 			</div>
 		</div>
+
+
+
+
+
+
+
+
+
+
+
+		<div class="relative z-10 hidden" aria-labelledby="modal-title" role="dialog" id="offer_model" aria-modal="true">
+			<div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+
+			<div class="fixed inset-0 z-10 overflow-y-auto">
+				<div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+				<div class="asking_price_modal_body_container">
+					<form action="/send_offer_mail_request_offer/<%= @car_detail&.id %>" method="get">
+						<div class="modal_body_top">
+							<div class="body_wrapper">
+								<div class="form_main">
+								<h3 class="label_main" id="modal-title">Send Offer</h3>
+
+								<%# <div class="desc_main">
+									<p class="desc">You want to Accept this Asking price</p>
+								</div> %>
+								
+								<div class="body_form">
+									<div class="form_control">
+										<input type="text" name="dealership_name" class="counter_price p-[10px]" placeholder="Dealership Name"><span class="text-[#ba1010bf]">*</span>
+									</div>
+									<div class="form_control">
+										<input type="text" name="name" class="counter_price p-[10px]" placeholder="Name"><span class="text-[#ba1010bf]">*</span>
+									</div>
+									<div class="form_control">
+										<input type="text" name="contact_num" class="counter_price p-[10px]" placeholder="Contact Number"><span class="text-[#ba1010bf]">*</span>
+									</div>
+									<div class="form_control">
+										<input type="text" name="email" class="counter_price p-[10px]" placeholder="Email"><span class="opacity-0">*</span>
+									</div>
+									<div class="form_control">
+										<input type="text" name="offer_price" class="counter_price p-[10px]" placeholder="Enter offer price"><span class="opacity-0">*</span>
+									</div>
+								</div>
+								</div>
+							</div>
+							</div>
+							<div class="modal_body_footer">
+							<button type="submit" class="submit_action">Submit</button>
+
+							<button type="button" class="close_counter_offer" onclick="closePriceInq()">Cancel</button>
+						</div>
+					</form>
+				</div>
+				</div>
+			</div>
+		</div>
+
+
 	</footer>
 
 
 	<script>
+
+	
+
+	function showPriceInqoffer(){
+			$("#offer_model").removeClass("hidden")
+		}
+
 		function showPriceInq(){
 			$("#asking_model").removeClass("hidden")
 		}
 
 		function closePriceInq(){
 			$("#asking_model").addClass("hidden")
+						$("#offer_model").addClass("hidden")
+
 		}
 
 		ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768ff5"];

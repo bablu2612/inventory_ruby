@@ -4142,7 +4142,7 @@ footer .contact_info p {
     z-index: 9;
     bottom: 20px;
     right: 20px;
-    max-width: 100px;opacity: 1;
+    max-width: 180px;opacity: 1;
 }
 .sold-out-image img {
     max-width: 100%;
@@ -4264,4 +4264,69 @@ font-size: 19px;
 }
 .scrolled-header .sub_heading_header1 {
     padding-left: 41px;
+}
+/* 15-06-2023 */
+
+button.Deal {
+    background: #006E02;
+   
+}
+.sold-out-image button{
+    border-radius: 10px;
+    min-height: 50px;
+    padding: 0 20px;
+    min-width: 140px;
+    width: 100%;
+    display: grid;
+    align-items: center;
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: none;
+}
+.sold-out-image button.Reserve {
+    background: #407CF5;
+}
+.sold-out-image button.Sold {
+    background: #e13b3b;
+}
+ 
+ul.parent_area .items-center.pl-3 {
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px 10px !important;
+    min-width: 90px;
+}
+ul.parent_area .items-center.pl-3 label  {
+    margin: 0 !important;
+    width: 100%;
+    max-width: 100%;
+    padding: 5px 0 0 !important;
+    display: block;
+    text-align: center;
+    font-size: 10px;
+}
+td.action_btn .icons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+} 
+
+td.action_btn .icons form.button_to i{
+    color: #e13b3b;
+}
+td.action_btn  a.view_action i {
+    color: #2959ad;
+}
+td.action_btn .icons a:hover{
+    background: none;
+}
+.car_list-table thead{
+    background: #4F46E5;
+}
+
+.car_list-table thead th {
+    color: #fff;
+    font-weight: 500;
+    font-family: 'Inter';
 }

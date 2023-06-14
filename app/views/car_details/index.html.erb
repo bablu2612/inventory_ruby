@@ -63,7 +63,7 @@
 					<div class="col-md-12 col-sm-12 px-0">
 						<div class="row">
               <% @car_details&.each do |car| %>
-                <div class="col-md-4 <%=  car.sold_out ? 'sold-out' : '' %>">
+                <div class="col-md-4 <%=  car.sold_out != "false" ? 'sold-out' : '' %>">
 					<div class="box_xs">
 					<a href="/single_car/<%= car.id %>">
                   <div class="car-item">
@@ -89,7 +89,7 @@
                   </div>
 				  </a>
 					<div class="sold-out-image">
-					   <img  src="/assets/deal_pending_icon.png" alt="" /> 
+					<button class="<%= car.sold_out  %>"> <%= car.sold_out  %> </button> 
 					</div>
 
 					</div>

@@ -13,13 +13,29 @@ class CarDetailsController < ApplicationController
     @car.save!
     OfferMailer.send_offer_email(@car, params).deliver_now
     respond_to do |format|
-        format.html { redirect_to "/single_car/#{@car.id}", notice: "Email is successfully sent." }
+        format.html { redirect_to "/single_car/#{@car.id}", notice: "Request is successfully sent." }
 
       end
 
 
 
   end
+
+  def send_offer_mail_request_offer
+    @car = CarDetail.find(params[:id])
+  
+    OfferMailer.send_offer_mail_request_offer(@car, params).deliver_now
+    respond_to do |format|
+        format.html { redirect_to "/single_car/#{@car.id}", notice: "Offer is successfully sent." }
+
+      end
+
+
+
+  end
+
+
+  
 
 
 

@@ -79,10 +79,10 @@
     <%= button_to 'New Car Details', "/car_details/new", method: :get, class: "inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto" %>
     </div>
   </div>
-  <div class="mt-8 flex flex-col">
-    <div class="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
-      <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
-        <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
+  <div class="mt-8 flex flex-col car_list-table">
+    <div class="overflow-x-auto shadow mt-3 rounded-lg">
+      <div class="inline-block min-w-full align-middle">
+        <div class="overflow-hidden ring-1 ring-black ring-opacity-5">
           <table class="min-w-full divide-y divide-gray-300">
             <thead class="bg-gray-50">
               <tr>
@@ -98,6 +98,8 @@
                 <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">title_status</th>
                 <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Zipcode</th>
                 <th scope="col" class="px-3 py-3.5 text-center text-sm font-semibold text-gray-900">Actions</th>
+               <th scope="col" class="px-3 py-3.5 text-center text-sm font-semibold text-gray-900">Deal Status</th>
+
 
           
               </tr>
@@ -120,12 +122,12 @@
 
 
 
-              <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                <div class="icons" style="display: flex; gap: 2px">
-                <%= link_to "/single_car/#{car.id}", class: "text-indigo-600 hover:text-indigo-900",target: "_blank" do %>
+              <td class="action_btn relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                <div class="icons">
+                <%= link_to "/single_car/#{car.id}", class: "text-indigo-600 hover:text-indigo-900 view_action",target: "_blank" do %>
                     <i class="fa-solid fa-eye"></i>
                   <% end %>
-                                  <%= link_to edit_car_detail_path(car.id),target: "_blank", class: "text-indigo-600 hover:text-indigo-900" do %>
+                                  <%= link_to edit_car_detail_path(car.id),target: "_blank", class: "text-indigo-600 hover:text-indigo-900 edit_action" do %>
 
                   <i class="fa-regular fa-pen-to-square"></i>
 
@@ -135,17 +137,38 @@
                 <i class="fa-solid fa-trash"></i>
               <% end %>
 
-                <div class="swith-button bg-white ml-2">
-                    <label class="relative inline-flex items-center cursor-pointer">
-                      <input type="checkbox" value="<%= car.id %>" class=" show_only_asking_price sr-only peer " <%= car.sold_out ? "checked" : '' %>     / >
-                      <div class="w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
-                      <span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300 hidden">Checked toggle</span>
-                    </label>
-                </div>
+                
                </div>
 
 
               </td>
+
+              <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+               
+
+                    <ul class="parent_area items-center w-full text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg flex dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                      <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
+                          <div class="flex items-center pl-3">
+                              <input <%= car.sold_out=="Deal Pending" ? "checked" : '' %>  id="vue-checkbox-list" type="checkbox" value="<%=car.id %>" data-label="Deal Pending" class="car_detail_deal_check <%=car.id %> w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                              <label for="vue-checkbox-list" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Deal Pending</label>
+                          </div>
+                      </li>
+                      <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
+                          <div class="flex items-center pl-3">
+                              <input <%= car.sold_out=="Reserve" ? "checked" : '' %> id="react-checkbox-list" type="checkbox"  value="<%=car.id %>" data-label="Reserve" class="car_detail_deal_check <%=car.id %> w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                              <label for="react-checkbox-list" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Reserve</label>
+                          </div>
+                      </li>
+                      <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
+                          <div class="flex items-center pl-3">
+                              <input <%= car.sold_out=="Sold" ? "checked" : '' %> id="angular-checkbox-list" type="checkbox"  value="<%=car.id %>" data-label="Sold" class="car_detail_deal_check <%=car.id %> w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                              <label for="angular-checkbox-list" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Sold</label>
+                          </div>
+                      </li>
+                      
+                  </ul>
+              </td>
+
               </tr>
 
                 <% end %>               
@@ -164,6 +187,39 @@
 
 
 <script>
+$(".car_detail_deal_check").on('click', function() {
+      var $box = $(this);
+
+      let id= $box.val();
+            let value= $box.attr("data-label");
+
+            console.log('vsal',value)
+
+      if ($box.is(":checked")) {
+         $(`.car_detail_deal_check.${id}`).prop("checked", false);
+         $box.prop("checked", true);
+      } else {
+        value="false"
+         $box.prop("checked", false);
+      }
+
+      let data = {id: id,sold_out: value }
+
+    $.ajax({
+        type: "post",
+        data: data,
+        url: "show_only_sold_out",
+        success: function(data) { 
+            if(data.status === 200){
+               $('.custom_notification').removeClass('hidden')
+            }else{
+
+            }
+        }
+    })
+
+
+   });
 
 
 $(".show_only_asking_price").click(function () {

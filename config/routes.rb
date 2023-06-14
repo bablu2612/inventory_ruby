@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   get 'home/index', to: "home#index"
   get '/single_car/:id', to: "home#single_car"
   get '/send_offer_mail_request/:id', to: "car_details#send_offer_email"
+  get '/send_offer_mail_request_offer/:id', to: "car_details#send_offer_mail_request_offer"
 
+  
   get '/admin', to: "admin#index"
 
 
