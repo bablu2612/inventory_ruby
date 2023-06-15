@@ -139,7 +139,7 @@
                <label class="text-slate-600 font-bold">
                Mileage<span class="text-red-500">*</span>
                </label>
-               <%= form.number_field :mileage, placeholder: "Enter Mileage", class: "block rounded-md border-0 outline-none px-3 py-2 mt-2 w-full" %>
+               <%= form.text_field :mileage, placeholder: "Enter Mileage", class: "block rounded-md border-0 outline-none px-3 py-2 mt-2 w-full" %>
                <% if car_detail.errors.has_key?(:mileage) %>
                <div class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">Mileage is required</div>
                <% end %>
@@ -148,7 +148,7 @@
                <label class="text-slate-600 font-bold">
                Zip Code<span class="text-red-500">*</span>
                </label>
-               <%= form.number_field :zip_code, placeholder: "Enter Zip Code", class: "block rounded-md border-0 outline-none px-3 py-2 mt-2 w-full" %>
+               <%= form.text_field :zip_code, placeholder: "Enter Zip Code", class: "block rounded-md border-0 outline-none px-3 py-2 mt-2 w-full" %>
                <% if car_detail.errors.has_key?(:zip_code) %>
                <div class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">Zipcode is required</div>
                <% end %>
@@ -170,7 +170,7 @@
             
 
             <div class="price_wraper market_value">
-               <h2>Post Market Value </h2>
+               <h2>Retail Market Value </h2>
                <div class="form_group mb-4 mt-[11px] max-w-full w-full">
                   <label class="text-slate-600 font-bold">
                   Min<span class="text-red-500">*</span>
