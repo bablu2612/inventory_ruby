@@ -246,10 +246,8 @@
 
 										</div>
 										<div class="range"> 
-											<span class="price"> $<%= number_with_delimiter(@car_detail&.market_min_price.to_i) %> </span>
-											~ 
-											<span class="price"> $
-											<%= number_with_delimiter(@car_detail&.market_max_price.to_i) %> </span>
+											<span class="price"><%= @car_detail&.market_min_price %> </span>
+											
 										</div>
 									 </div>
 
@@ -257,7 +255,7 @@
 									<div class="price_range-val right-section">
 										<div class="pmv_rate"> Asking Price</div>
 										
-										<div class="range"> <span class="price"> $<%= number_with_delimiter(@car_detail&.low.to_i) %> </span> ~ <span class="price"> $ <%= number_with_delimiter(@car_detail&.best.to_i) %> </span></div>
+										<div class="range"> <span class="price"> <%= @car_detail&.low %> </span></div>
 									</div>
 
 							</div>

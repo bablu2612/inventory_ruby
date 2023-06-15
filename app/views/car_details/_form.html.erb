@@ -172,16 +172,16 @@
             <div class="price_wraper market_value">
                <h2>Retail Market Value </h2>
                <div class="form_group mb-4 mt-[11px] max-w-full w-full">
-                  <label class="text-slate-600 font-bold">
+                  <label class="text-slate-600 font-bold hidden">
                   Min<span class="text-red-500">*</span>
                   </label>
-                  <%= form.text_field :market_min_price, placeholder: "Enter min price", class: "block rounded-md border-0 outline-none px-3 py-2 mt-2 w-full" %>
+                  <%= form.text_field :market_min_price, placeholder: "Enter price", class: "block rounded-md border-0 outline-none px-3 py-2 mt-2 w-full" %>
                   <% if car_detail.errors.has_key?(:market_max_price) %>
                   <div class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">Min is required</div>
                   <% end %>
                 </div>
 
-               <div class="form_group mb-4 mt-[11px] max-w-full w-full">
+               <div class="form_group mb-4 mt-[11px] max-w-full w-full hidden">
                   <label class="text-slate-600 font-bold">
                   Max<span class="text-red-500">*</span>
                   </label>
@@ -195,18 +195,18 @@
 
 
             <div class="price_wraper price_range">
-               <h2>Price Range </h2>
+               <h2>Asking price </h2>
                <div class="form_group mb-4 mt-[11px] max-w-full w-full">
-                  <label class="text-slate-600 font-bold">
+                  <label class="text-slate-600 font-bold hidden">
                   Min<span class="text-red-500">*</span>
                   </label>
-                  <%= form.text_field :low, placeholder: "Enter min price", class: "block rounded-md border-0 outline-none px-3 py-2 mt-2 w-full" %>
+                  <%= form.text_field :low, placeholder: "Enter price", class: "block rounded-md border-0 outline-none px-3 py-2 mt-2 w-full" %>
                   <% if car_detail.errors.has_key?(:low) %>
                   <div class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">Min is required</div>
                   <% end %>
                </div>
 
-               <div class="form_group mb-4 mt-[11px] max-w-full w-full">
+               <div class="form_group mb-4 mt-[11px] max-w-full w-full hidden">
                   <label class="text-slate-600 font-bold">
                   Max<span class="text-red-500">*</span>
                   </label>
@@ -344,7 +344,7 @@
       var $box = $(this);
 
       $('#deal_type').val($box.attr('id'))
-      if ($box.is(":checked")) {
+      if ($box.is(":checked")) { 
          $(".car_detail_deal_check").prop("checked", false);
          $box.prop("checked", true);
       } else {
