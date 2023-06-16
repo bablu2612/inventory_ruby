@@ -4334,7 +4334,7 @@ td.action_btn .icons a:hover{
 .slider-pro .added_commission_value {
     position: absolute;
     right: 0;
-    bottom: 95px;
+    bottom: 0px;
     color: #299cdb;
     background-color: rgb(41 156 219 / 20%);
     padding: 10px;
@@ -4365,15 +4365,31 @@ button.submit_commission {
     text-transform: capitalize;
     font-weight: 700;
 }
-
+.sp-slides-container {
+    height: 450px;
+}
 .comission {
     gap: 10px;
 }
 .added_commission_value.hidden+.sp-slides-container +.sp-thumbnails-container.sp-bottom-thumbnails {
     padding-top: 0;
 }
+div#single-car:not(.oneImageSlide) .added_commission_value {
+    bottom: 100px;
+}
 @media (max-width: 767px){
     .slider-pro .added_commission_value { 
+        bottom: 0;
+    }
+    .sp-slides-container {
+        height: 270px;
+    }
+
+    div#single-car:not(.oneImageSlide) .sp-bottom-thumbnails {
+        padding-top: 25px;
+    }
+    div#single-car:not(.oneImageSlide) .added_commission_value {
         bottom: 100px;
+   
     }
 }
