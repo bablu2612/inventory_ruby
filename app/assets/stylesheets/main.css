@@ -4330,3 +4330,50 @@ td.action_btn .icons a:hover{
     font-weight: 500;
     font-family: 'Inter';
 }
+
+.slider-pro .added_commission_value {
+    position: absolute;
+    right: 0;
+    bottom: 95px;
+    color: #299cdb;
+    background-color: rgb(41 156 219 / 20%);
+    padding: 10px;
+    border-radius: 5px;
+    line-height: normal;
+    z-index: 99; 
+    font-weight: 700;
+}
+.sp-bottom-thumbnails {
+    padding-top: 65px;
+}
+.comission input {
+    min-height: 40px;
+    border: 1px solid #eee;
+    padding: 0 10px;
+    border-radius: 5px;
+    max-width: 170px;
+    outline: none;
+    font-size: 12px;
+}
+
+button.submit_commission {
+    background: #0ab39c;
+    border-radius: 5px;
+    min-width: 70px;
+    color: #fff;
+    font-size: 12px;
+    text-transform: capitalize;
+    font-weight: 700;
+}
+
+.comission {
+    gap: 10px;
+}
+.added_commission_value.hidden+.sp-slides-container +.sp-thumbnails-container.sp-bottom-thumbnails {
+    padding-top: 0;
+}
+@media (max-width: 767px){
+    .slider-pro .added_commission_value { 
+        bottom: 100px;
+    }
+}

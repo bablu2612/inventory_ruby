@@ -13,5 +13,10 @@ Rails.application.routes.draw do
 
   post "/show_only_sold_out", to: "car_details#show_only_sold_out"
 
+  post "/update_commission", to: "car_details#update_commission"
+
+
+  
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

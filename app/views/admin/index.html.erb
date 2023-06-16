@@ -127,7 +127,7 @@
                 <%= link_to "/single_car/#{car.id}", class: "text-indigo-600 hover:text-indigo-900 view_action",target: "_blank" do %>
                     <i class="fa-solid fa-eye"></i>
                   <% end %>
-                                  <%= link_to edit_car_detail_path(car.id),target: "_blank", class: "text-indigo-600 hover:text-indigo-900 edit_action" do %>
+                   <%= link_to edit_car_detail_path(car.id),target: "_blank", class: "text-indigo-600 hover:text-indigo-900 edit_action" do %>
 
                   <i class="fa-regular fa-pen-to-square"></i>
 
@@ -143,7 +143,14 @@
 
               </td>
 
-              <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><%= car.commission %></td>
+              <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+              <div class="d-flex comission">
+              <input type="text" name="commission"  class="commission" id="commission_<%=car.id %>" placeholder="Enter commission" value="<%= car.commission %>" />
+              <button class="submit_commission" id="<%=car.id %>"> submit </button>
+              </div>
+              
+              
+              </td>
 
 
               <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
@@ -223,6 +230,33 @@ $(".car_detail_deal_check").on('click', function() {
 
 
    });
+
+
+
+
+
+
+
+$(".submit_commission").click(function () {
+  $('.custom_notification').addClass('hidden')
+
+let commission=  $(`#commission_${$(this).attr('id')}`).val()
+    let data = {id: $(this).attr('id'),commission: commission }
+
+    $.ajax({
+        type: "post",
+        data: data,
+        url: "update_commission",
+        success: function(data) { 
+            if(data.status === 200){
+               $('.custom_notification').removeClass('hidden')
+            }else{
+
+            }
+        }
+    })
+    
+})
 
 
 $(".show_only_asking_price").click(function () {

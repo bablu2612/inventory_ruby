@@ -155,7 +155,7 @@
 								
 								
 							</div>
-<div class="added_commission_value">
+							<div class="added_commission_value <%= @car_detail.commission.present? ? '' : 'hidden' %>">
 								<%= @car_detail.commission %>
 
 								</div>

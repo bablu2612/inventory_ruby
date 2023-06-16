@@ -49,6 +49,18 @@ def show_only_sold_out
 end
 
 
+def update_commission
+
+  car = CarDetail.find(params[:id])
+  car.update(commission: params[:commission])
+  # binding.pry
+    render json: {data: car ,status: 200 ,message: "Record updated successfully"}
+
+end
+
+
+
+
 
   # GET /car_details/1 or /car_details/1.json
   def show
