@@ -92,12 +92,13 @@
                 <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Model</th>
                 <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Trim</th>
                 <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Mileage</th>
-                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">fuel_type</th>
                 <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Color</th>
                 <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">vehicle_condition</th>
                 <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">title_status</th>
                 <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Zipcode</th>
                 <th scope="col" class="px-3 py-3.5 text-center text-sm font-semibold text-gray-900">Actions</th>
+                <th scope="col" class="px-3 py-3.5 text-center text-sm font-semibold text-gray-900">Commission</th>
+
                <th scope="col" class="px-3 py-3.5 text-center text-sm font-semibold text-gray-900">Deal Status</th>
 
 
@@ -114,7 +115,6 @@
               <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><%= car.model %></td>
               <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><%= car.trim %></td>
               <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><%= car.mileage %></td>
-              <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><%= car.fuel_type %></td>
               <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><%= car.color %></td>
               <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><%= car.vehicle_condition %></td>
               <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><%= car.title_status %></td>
@@ -142,6 +142,9 @@
 
 
               </td>
+
+              <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><%= car.commission %></td>
+
 
               <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
                
