@@ -4284,7 +4284,7 @@ button.Deal {
     text-transform: uppercase;
     border: none;
 }
-.sold-out-image button.Reserve {
+.sold-out-image button.Reserved {
     background: #407CF5;
 }
 .sold-out-image button.Sold {
