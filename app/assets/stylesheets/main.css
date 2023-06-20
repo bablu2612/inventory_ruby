@@ -4340,7 +4340,7 @@ td.action_btn .icons a:hover{
     padding: 10px;
     border-radius: 5px;
     line-height: normal;
-    z-index: 99; 
+    z-index: 1; 
     font-weight: 700;
 }
 .sp-bottom-thumbnails {
