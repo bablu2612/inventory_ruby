@@ -155,10 +155,6 @@
 								
 								
 							</div>
-							<div class="added_commission_value <%= @car_detail.commission.present? ? '' : 'hidden' %>">
-								<%= @car_detail.commission %>
-
-								</div>
 							<% if @car_detail&.images&.length > 1 %>
 								<div class="sp-thumbnails">
 									<% @car_detail&.images&.each do |image|%>
@@ -166,6 +162,10 @@
 									<% end %>
 								</div>
 							<% end %>
+						</div>
+						<div class="added_commission_value <%= @car_detail.commission.present? ? '' : 'hidden' %>">
+						<%= @car_detail.commission %>
+
 						</div>
 					</div>
 					<div class="col-md-6">

@@ -4331,20 +4331,22 @@ td.action_btn .icons a:hover{
     font-family: 'Inter';
 }
 
-.slider-pro .added_commission_value {
-    position: absolute;
-    right: 0;
-    bottom: 0px;
+.added_commission_value {
     color: #299cdb;
     background-color: rgb(41 156 219 / 20%);
     padding: 10px;
     border-radius: 5px;
     line-height: normal;
-    z-index: 1; 
     font-weight: 700;
+    width: fit-content;
+    float: right;
+    margin: 10px 5px;
 }
 .sp-bottom-thumbnails {
     padding-top: 65px;
+}
+.single-car .sp-bottom-thumbnails {
+    padding-top: 0px;
 }
 .comission input {
     min-height: 40px;
@@ -4374,22 +4376,12 @@ button.submit_commission {
 .added_commission_value.hidden+.sp-slides-container +.sp-thumbnails-container.sp-bottom-thumbnails {
     padding-top: 0;
 }
-div#single-car:not(.oneImageSlide) .added_commission_value {
-    bottom: 100px;
-}
 @media (max-width: 767px){
-    .slider-pro .added_commission_value { 
-        bottom: 0;
-    }
     .sp-slides-container {
         height: 270px;
     }
 
     div#single-car:not(.oneImageSlide) .sp-bottom-thumbnails {
         padding-top: 25px;
-    }
-    div#single-car:not(.oneImageSlide) .added_commission_value {
-        bottom: 100px;
-   
     }
 }
