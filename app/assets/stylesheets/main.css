@@ -4385,3 +4385,12 @@ button.submit_commission {
         padding-top: 25px;
     }
 }
+
+p.custom {
+    color: #9b8c8c;
+    font-size: 15px;
+    margin-top: 2px;
+    font-weight: 500;
+    line-height: 1.5;
+    align-items: center;
+};
